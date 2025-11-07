@@ -2,9 +2,6 @@
 @section('title', 'Listar alunos')
 @section('content')
     <h1>Lista de alunos
-        @guest
-            pública
-        @endguest
     </h1>
     @auth
      <a class="btn btn-primary" href="{{ route('aluno.create') }}">Cadastrar</a>
