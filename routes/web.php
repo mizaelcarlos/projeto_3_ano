@@ -6,10 +6,13 @@ use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DiretoriaController;
+use App\Http\Controllers\ProfessorController;
 use App\Http\Controllers\AvaliacaoController;
+use App\Http\Controllers\LaboratorioController;
+use App\Http\Controllers\ZeladoriaController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
->>>>>>> 888371844f245b39c85c1c94719d6080b34476b5
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -24,20 +27,19 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
+    Route::resource('diretoria', DiretoriaController::class);
+    Route::resource('professor', ProfessorController::class);
+
+    Route::resource('laboratorio', LaboratorioController::class);
+    Route::resource('zeladoria', ZeladoriaController::class);
+    Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
+    Route::resource('aluno', AlunoController::class);
     Route::resource('disciplina', DisciplinaController::class);
-    Route::resource('secretaria', SecreatriaController::class);
->>>>>>> 888371844f245b39c85c1c94719d6080b34476b5
-
-});    
-
+    Route::resource('secretaria', SecretariaController::class);
+});
 
 Route::resource('aluno', AlunoController::class);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
-<<<<<<< HEAD
 
 require __DIR__ . '/auth.php';
-=======
-Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
-require __DIR__ . '/auth.php';
->>>>>>> 888371844f245b39c85c1c94719d6080b34476b5
