@@ -85,7 +85,7 @@
                 @else
                     <div class="alert alert-info text-center">
                         <h4>Nenhuma disciplina cadastrada</h4>
-                        <p>Clique no botão "Nova Disciplina".</p>
+                        <p>"Nova Disciplina".</p>
                     </div>
                 @endif
             </div>
