@@ -25,12 +25,14 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
+    Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
+    Route::resource('aluno', AlunoController::class);
 });
 
 
-Route::resource('aluno', AlunoController::class);
+
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
-Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
+
 require __DIR__ . '/auth.php';
 
