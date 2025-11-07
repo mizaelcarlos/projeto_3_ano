@@ -7,6 +7,8 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AvaliacaoController;
+Use App\Http\Controllers\LaboratorioController;
+use App\Http\Controllers\ZeladoriaController;
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -21,6 +23,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
+    Route::resource('laboratorio', LaboratorioController::class);
+    Route::resource('zeladoria', ZeladoriaController::class);
 });
 
 
