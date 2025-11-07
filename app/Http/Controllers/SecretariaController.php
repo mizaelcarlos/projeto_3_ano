@@ -68,6 +68,8 @@ class SecretariaController extends Controller
             'cpf' => $request->cpf,
             'email' => $request->email
         ]);
+
+        return redirect()->route('secretaria.index');
     }
 
     /**
