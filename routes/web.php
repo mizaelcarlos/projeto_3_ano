@@ -6,15 +6,9 @@ use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\HomeController;
-<<<<<<< HEAD
-use App\Http\Controllers\DiretoriaController;
-use App\Http\Controllers\ProfessorController;
-use App\Models\Professor;
-=======
 use App\Http\Controllers\AvaliacaoController;
-Use App\Http\Controllers\LaboratorioController;
-use App\Http\Controllers\ZeladoriaController;
->>>>>>> 212c6530681441ce80318c0d6bc0c8178dffa3ac
+use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\SecretariaController;
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -29,21 +23,14 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
-<<<<<<< HEAD
-    Route::resource('diretoria', DiretoriaController::class);
-    Route::resource('professor', ProfessorController::class);
+    Route::resource('disciplina', DisciplinaController::class);
+    Route::resource('secretaria', SecreatriaController::class);
 
-=======
-    Route::resource('laboratorio', LaboratorioController::class);
-    Route::resource('zeladoria', ZeladoriaController::class);
->>>>>>> 212c6530681441ce80318c0d6bc0c8178dffa3ac
-    Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
-    Route::resource('aluno', AlunoController::class);
-});
+});    
 
 
-
+Route::resource('aluno', AlunoController::class);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
-
+Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
 require __DIR__ . '/auth.php';
