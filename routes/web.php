@@ -8,10 +8,12 @@ use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DiretoriaController;
 use App\Http\Controllers\ProfessorController;
-use App\Models\Professor;
 use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\LaboratorioController;
 use App\Http\Controllers\ZeladoriaController;
+use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\SecretariaController;
+
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -33,10 +35,14 @@ Route::middleware('auth')->group(function () {
     Route::resource('zeladoria', ZeladoriaController::class);
     Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
     Route::resource('aluno', AlunoController::class);
+    Route::resource('disciplina', DisciplinaController::class);
+    Route::resource('secretaria', SecretariaController::class);
 });
 
 
 
+
+Route::resource('aluno', AlunoController::class);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
 
