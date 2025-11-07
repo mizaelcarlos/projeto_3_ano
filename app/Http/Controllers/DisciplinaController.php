@@ -23,6 +23,7 @@ class DisciplinaController extends Controller
     public function create()
     {
         $disciplina = Disciplina::all();
+        
         return view('disciplina.create', compact('disciplina'));
     }
 
@@ -31,7 +32,9 @@ class DisciplinaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Disciplina::create($request->all());
+
+        return redirect()->route('disciplina.index');
     }
 
     /**
@@ -39,7 +42,9 @@ class DisciplinaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $disciplina = Disciplina::find($id);
+        
+        return view('disciplina.show', compact('disciplina'));
     }
 
     /**
@@ -47,7 +52,9 @@ class DisciplinaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $disciplina = Disciplina::all();
+        
+        return view('disciplina.edit', compact('disciplina'));
     }
 
     /**
@@ -55,7 +62,10 @@ class DisciplinaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $disciplina = Disciplina::find($id);
+        $disciplina->update($request->all());
+        
+        return redirect()->route('disciplina.index');
     }
 
     /**
@@ -63,6 +73,9 @@ class DisciplinaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $disciplina = Disciplina::find($id);
+        $disciplina->delete();
+        
+        return redirect()->route('curso.index');
     }
 }
