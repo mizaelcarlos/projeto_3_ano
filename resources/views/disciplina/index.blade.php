@@ -80,22 +80,16 @@
                             </tbody>
                         </table>
                     </div>
-                    
-                    @if($disciplina->hasPages())
-                        <div class="d-flex justify-content-center mt-4">
-                            {{ $disciplina->links() }}
-                        </div>
-                    @endif
+
 
                 @else
                     <div class="alert alert-info text-center">
                         <h4>Nenhuma disciplina cadastrada</h4>
-                        <p>Clique no botão "Nova Disciplina" para adicionar a primeira disciplina.</p>
+                        <p>"Nova Disciplina".</p>
                     </div>
                 @endif
             </div>
         </div>
     </div>
-    
 </body>
 </html>
