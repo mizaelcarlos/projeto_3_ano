@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           8.0.40 - MySQL Community Server - GPL
+-- Versão do servidor:           8.0.42 - MySQL Community Server - GPL
 -- OS do Servidor:               Win64
--- HeidiSQL Versão:              12.11.0.7065
+-- HeidiSQL Versão:              12.0.0.6468
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -14,18 +14,20 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Copiando estrutura para tabela escola.laboratorio
-CREATE TABLE IF NOT EXISTS `laboratorio` (
+-- Copiando estrutura para tabela escola.professor
+CREATE TABLE IF NOT EXISTS `professor` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
-  `tipo` varchar(255) DEFAULT NULL,
-  `capacidade` int DEFAULT NULL,
-  `equipamentos` varchar(255) DEFAULT NULL,
-  `responsavel` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `email` varchar(255) NOT NULL,
+  `telefone` varchar(11) NOT NULL,
+  `disciplina` varchar(255) NOT NULL,
+  `turno` varchar(255) NOT NULL,
+  `turma_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `turma_id` (`turma_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela escola.professor: ~0 rows (aproximadamente)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

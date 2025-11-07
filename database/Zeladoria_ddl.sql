@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           8.0.40 - MySQL Community Server - GPL
+-- Versão do servidor:           8.0.42 - MySQL Community Server - GPL
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              12.11.0.7065
 -- --------------------------------------------------------
@@ -14,18 +14,22 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
--- Copiando estrutura para tabela escola.laboratorio
-CREATE TABLE IF NOT EXISTS `laboratorio` (
+
+-- Copiando estrutura do banco de dados para escola
+CREATE DATABASE IF NOT EXISTS `escola` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `escola`;
+
+-- Copiando estrutura para tabela escola.zeladoria
+CREATE TABLE IF NOT EXISTS `zeladoria` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) NOT NULL,
-  `tipo` varchar(255) DEFAULT NULL,
-  `capacidade` int DEFAULT NULL,
-  `equipamentos` varchar(255) DEFAULT NULL,
-  `responsavel` varchar(255) DEFAULT NULL,
+  `nome_zelador` varchar(45) NOT NULL,
+  `setor` varchar(100) NOT NULL,
+  `tarefa` varchar(100) NOT NULL,
+  `turno` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela escola.zeladoria: ~0 rows (aproximadamente)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
