@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Secretaria;
 
 class SecretariaController extends Controller
 {
@@ -11,7 +12,8 @@ class SecretariaController extends Controller
      */
     public function index()
     {
-        //
+        $secretaria = Secretaria::all();
+        return view('secretaria.index', compact('secretaria'));
     }
 
     /**
@@ -19,7 +21,8 @@ class SecretariaController extends Controller
      */
     public function create()
     {
-        //
+        $secretaria = Secretaria::all();
+        return view('secretaria.create', compact('secretaria'));
     }
 
     /**
@@ -27,7 +30,13 @@ class SecretariaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $secretaria = Secretaria::create([
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'email' => $request->email,
+        ]);
+
+        return redirect()->route('secretaria.index');
     }
 
     /**
@@ -35,7 +44,8 @@ class SecretariaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $secretaria = Secretaria::find($id);
+        return view('secretaria.show', compact('secretaria'));
     }
 
     /**
@@ -43,7 +53,8 @@ class SecretariaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $secretaria = Secretaria::find($id);
+        return view('secretaria.edit', compact('secretaria'));
     }
 
     /**
@@ -51,7 +62,14 @@ class SecretariaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $secretaria = Secretaria::find($id);
+        $secretaria->update([
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'email' => $request->email
+        ]);
+
+        return redirect()->route('secretaria.index');
     }
 
     /**
@@ -59,6 +77,8 @@ class SecretariaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $secretaria = Secretaria::find($id);
+        $secretaria->delete();
+        return redirect()->route('secretaria.index');
     }
 }
