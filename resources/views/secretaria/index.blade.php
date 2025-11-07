@@ -28,11 +28,10 @@
         <tbody>
             @forelse($secretarias as $secretaria)
                 <tr>
-                    <td>{{ $secretaria-> }}</td>
-                    <td>{{ $secretaria-> }}</td>
-                    <td>{{ $secretaria-> }}</td>
-                    <td>{{ $secretaria-> }}</td>
-                    <td>{{ $secretaria-> }}</td>
+                    <td>{{ $secretaria-> nome}}</td> 
+                    <td>{{ $secretaria->cpf }}</td>
+                    <td>{{ $secretaria-> email }}</td>
+                    
                 </tr>
             @empty
                 <tr>
