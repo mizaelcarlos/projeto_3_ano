@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Listar diretoria')
 @section('content')
-    <h1>Lista da diretoria
-    </h1>
+    <h1>Lista da diretoria</h1>
     @auth
      <a class="btn btn-primary" href="{{ route('diretoria.create') }}">Cadastrar</a>
     @endauth
