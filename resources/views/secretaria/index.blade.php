@@ -1,45 +1,50 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Secretarias</title>
-    <link href= rel="stylesheet">
-</head>
-<body class="p-4">
-<div class="container">
-    <h1 class="mb-4">Secretarias</h1>
+@extends('layouts.app')
+@section('title', 'Listar secretarias')
+@section('content')
+    <h1>Lista de secretarias</h1>
+    
+    @auth
+        <a class="btn btn-primary mb-3" href="{{ route('secretaria.create') }}">Cadastrar</a>
+    @endauth
 
-    <a href="{{ route('secretarias.create') }}" class="btn btn-success mb-3">+ Nova Secretaria</a>
-
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
-
-    <table class="table table-bordered table-striped">
-        <thead class="table-dark">
+    <table class="table table-sm table-bordered table-hover">
+        <thead class="thead-light">
             <tr>
-                <th>ID</th>
                 <th>Nome</th>
+                <th>CPF</th>
                 <th>Email</th>
-                <th>Telefone</th>
-                <th>Cargo</th>
+                @auth
+                    <th>Opções</th>
+                @endauth
             </tr>
         </thead>
         <tbody>
-            @forelse($secretarias as $secretaria)
-                <tr>
-                    <td>{{ $secretaria-> nome}}</td> 
+            @foreach ($secretarias as $secretaria)
+                <tr class="table-info">
+                    <td>{{ $secretaria->nome }}</td>
                     <td>{{ $secretaria->cpf }}</td>
-                    <td>{{ $secretaria-> email }}</td>
-                    
+                    <td>{{ $secretaria->email }}</td>
+                    @auth
+                        <td>
+                            <div class="d-flex">
+                                <div class="m-1">
+                                    <a class="btn btn-success" href="{{ route('secretaria.edit', $secretaria->id) }}">Editar</a>
+                                </div>
+                                <div class="m-1">
+                                    <a class="btn btn-primary" href="{{ route('secretaria.show', $secretaria->id) }}">Visualizar</a>
+                                </div>
+                                <div class="m-1">
+                                    <form action="{{ route('secretaria.destroy', $secretaria->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Excluir</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    @endauth
                 </tr>
-            @empty
-                <tr>
-                    <td colspan="5" class="text-center text-muted">Nenhuma secretaria cadastrada.</td>
-                </tr>
-            @endforelse
+            @endforeach
         </tbody>
     </table>
-</div>
-</body>
-</html>
+@endsection
