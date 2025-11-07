@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
+
 Route::resource('aluno', AlunoController::class);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
