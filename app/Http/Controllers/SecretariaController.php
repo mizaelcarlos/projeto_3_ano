@@ -11,7 +11,8 @@ class SecretariaController extends Controller
      */
     public function index()
     {
-        //
+        $secretaria = Secretaria::all();
+        return view('secretaria.index', compact('secretaria'));
     }
 
     /**
@@ -19,7 +20,8 @@ class SecretariaController extends Controller
      */
     public function create()
     {
-        //
+        $secretaria = Secretaria::all();
+        return view('secretaria.create', compact('secretaria'));
     }
 
     /**
@@ -35,7 +37,7 @@ class SecretariaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
