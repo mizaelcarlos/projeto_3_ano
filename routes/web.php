@@ -7,6 +7,8 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AvaliacaoController;
+use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\SecretariaController;
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -18,6 +20,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('disciplina', DisciplinaController::class);
+    Route::resource('secretaria', SecreatriaController::class);
 
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
@@ -29,3 +33,4 @@ Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
 require __DIR__ . '/auth.php';
+
