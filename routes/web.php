@@ -6,8 +6,9 @@ use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Controllers\HomeController;
-
-
+use App\Http\Controllers\DiretoriaController;
+use App\Http\Controllers\ProfessorController;
+use App\Models\Professor;
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -22,6 +23,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
+    Route::resource('diretoria', DiretoriaController::class);
+    Route::resource('professor', ProfessorController::class);
 
     Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
     Route::resource('aluno', AlunoController::class);
