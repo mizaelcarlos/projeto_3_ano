@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Professor;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +12,8 @@ class ProfessorController extends Controller
      */
     public function index()
     {
-        //
+        $professor = Professor::all();
+        return view('professor.index', compact('professor'));
     }
 
     /**
@@ -19,7 +21,8 @@ class ProfessorController extends Controller
      */
     public function create()
     {
-        //
+        $professor = Professor::all();
+        return view('professor.create', compact('professor'));
     }
 
     /**
@@ -27,7 +30,16 @@ class ProfessorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $professor = Professor::create([
+            'nome' => $request->nome,
+            'email' => $request->email,
+            'telefone' => $request->telefone,
+            'disciplina' => $request->disciplina,
+            'turma' => $request->turma,
+            'turma_id' => $request->turma_id,
+        ]);
+
+        return redirect()->route('professor.index');
     }
 
     /**
@@ -35,7 +47,8 @@ class ProfessorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $professor = Professor::find($id);
+        return view('professor.show', compact('professor'));
     }
 
     /**
@@ -43,7 +56,8 @@ class ProfessorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $professor = Professor::find($id);
+        return view('professor.edit', compact('professor'));
     }
 
     /**
@@ -51,7 +65,16 @@ class ProfessorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $professor = Professor::create([
+            'nome' => $request->nome,
+            'email' => $request->email,
+            'telefone' => $request->telefone,
+            'disciplina' => $request->disciplina,
+            'turma' => $request->turma,
+            'turma_id' => $request->turma_id,
+        ]);
+
+        return redirect()->route('professor.index');
     }
 
     /**
@@ -59,6 +82,8 @@ class ProfessorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $professor = Professor::find($id);
+        $professor->delete();
+        return redirect()->route('professor.index');
     }
 }
