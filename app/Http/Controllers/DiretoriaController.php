@@ -3,18 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Disciplina;
 
-class DisciplinaController extends Controller
+class DiretoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $disciplina = Disciplina::all();
-        
-        return view('disciplina.index', compact('disciplina'));
+        //
     }
 
     /**
@@ -22,8 +19,7 @@ class DisciplinaController extends Controller
      */
     public function create()
     {
-        $disciplina = Disciplina::all();
-        return view('disciplina.create', compact('disciplina'));
+        //
     }
 
     /**
