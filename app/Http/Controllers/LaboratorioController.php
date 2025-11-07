@@ -43,7 +43,8 @@ class LaboratorioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $laboratorio = Laboratorio::find($id);
+        return view('laboratorio.edit', compact('laboratorio'));
     }
 
     /**
@@ -51,7 +52,7 @@ class LaboratorioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
     }
 
     /**
