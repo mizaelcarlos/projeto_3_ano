@@ -15,7 +15,7 @@
                         <h4 class="mb-0">Nova Disciplina</h4>
                     </div>
                     <div class="card-body">
-                        <!-- Exibe mensagens de erro -->
+
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul class="mb-0">
