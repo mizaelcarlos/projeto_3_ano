@@ -8,7 +8,7 @@ class Disciplina extends Model
 {
     //
     protected $table = 'disciplina';
-    protected $fillable = ['id', 'nome', 'carga_horaria', 'curso_id'];
+    protected $fillable = ['nome', 'carga_horaria', 'curso_id'];
     public $timestamps = false;
 
     public function curso()
