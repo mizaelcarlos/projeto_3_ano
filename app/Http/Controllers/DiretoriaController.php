@@ -12,8 +12,8 @@ class DiretoriaController extends Controller
      */
     public function  index()
     {
-           $diretoria = Diretoria::all();
-           return view('diretoria.index', compact('diretoria'));
+        $diretorias = Diretoria::all();
+        return view('diretoria.index', compact('diretorias'));
     }
 
     /**
@@ -21,15 +21,47 @@ class DiretoriaController extends Controller
      */
     public function create()
     {
-        $diretorias = Diretoria::all();
-        return view('diretoria.create', compact('diretorias'));
+        return view('diretoria.create');
     }
-    
 
     /**
-     * Store a newly created resource in storage.
-     */
+ * Store a newly created resource in storage.
+ */
     public function store(Request $request)
+    {
+
+        $diretoria = Diretoria::create([
+            'nome' => $request->nome,
+            'gestao' => $request->gestao,
+            'data_inicio' => $request->data_inicio,
+            'data_fim' => $request->data_fim
+        ]);
+
+        return redirect()->route('diretoria.index');
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $diretoria = Diretoria::find($id);
+        return view('diretoria.show', compact('diretoria'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $diretoria = Diretoria::find($id);
+        return view('diretoria.edit', compact('diretoria'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
     {
         $diretoria = Diretoria::find($id);
         $diretoria->update([
@@ -39,41 +71,7 @@ class DiretoriaController extends Controller
             'data_fim' => $request->data_fim
         ]);
 
-          return redirect()->route('diretoria.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-         $secretaria = Secretaria::find($id);
-        return view('secretaria.show', compact('secretaria'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-         $secretaria = Secretaria::find($id);
-        return view('secretaria.edit', compact('secretaria'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-          $diretoria = Diretoria::find($id);
-        $diretoria->update([
-            'nome' => $request->nome,
-            'gestao' => $request->gestao,
-            'data_inicio' => $request->data_inicio,
-            'data_fim' => $request->data_fim
-        ]);
-
-          return redirect()->route('diretoria.index');
+        return redirect()->route('diretoria.index');
     }
 
     /**
@@ -81,7 +79,7 @@ class DiretoriaController extends Controller
      */
     public function destroy(string $id)
     {
-         $diretoria = Diretoria::find($id);
+        $diretoria = Diretoria::find($id);
         $diretoria->delete();
         return redirect()->route('diretoria.index');
     }
