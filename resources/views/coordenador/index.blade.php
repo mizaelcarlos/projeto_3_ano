@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         @foreach ($coordenadores as $coordenador)
-        <tr class="table-warning">
+        <tr class="table-light">
             <td>{{ $coordenador->nome }}</td>
             <td>{{ $coordenador->seguimento }}</td>
             <td>
