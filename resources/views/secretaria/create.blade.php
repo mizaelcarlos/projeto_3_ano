@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Cadastrar Diretoria')
 @section('content')
-<h1>Cadastro de Diretoria</h1>
+<h1>Cadastro Secretaria</h1>
 <form action="{{ route('diretoria.store') }}" method="post">
     @csrf
 
