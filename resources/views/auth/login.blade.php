@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -56,13 +55,11 @@
     <div class="login-container">
       <h2>Login</h2>
       <form method="POST" action="{{ route('login') }}">
-=======
 <x-guest-layout >
     <!-- Session Status -->
     <x-auth-session-status  class="mb-4" :status="session('status')" />
 
     <form  method="POST"  action="{{ route('login') }}">
->>>>>>> f6e56d9550cbaa8db0f09e9ad96715ac0892ae2e
         @csrf
 
         <div class="mb-3">
