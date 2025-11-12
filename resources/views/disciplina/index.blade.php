@@ -40,8 +40,6 @@
                                     <th>Nome</th>
                                     <th>Código</th>
                                     <th>Carga Horária</th>
-                                    <th>Descrição</th>
-                                    <th>Ações</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,7 +49,6 @@
                                         <td>{{ $disc->nome }}</td>
                                         <td>{{ $disc->codigo }}</td>
                                         <td>{{ $disc->carga_horaria }}h</td>
-                                        <td>{{ Str::limit($disc->descricao, 50) }}</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <a href="{{ route('disciplina.show', $disc->id) }}" 
