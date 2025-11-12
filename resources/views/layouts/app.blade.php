@@ -36,6 +36,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Laboratorio</a>
                         <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ route('professor.create') }}">Cadastrar</a>
+                        <a class="dropdown-item" href="{{ route('professor.index') }}">Listar</a>
                         <a class="dropdown-item" href="{{ route('laboratorio.create') }}">Cadastrar</a>
                         <a class="dropdown-item" href="{{ route('laboratorio.index') }}">Listar</a>
                         </div>

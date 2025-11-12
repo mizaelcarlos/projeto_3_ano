@@ -2,7 +2,7 @@
 @section('title', 'Editar zeladoria')
 @section('content')
     <h1>Editar Zeladoria</h1>
-    <form action="{{  route("zeladoria.update",$zeladoria->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{  route("zeladoria.update", $zeladoria->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <label for="">Nome</label>
