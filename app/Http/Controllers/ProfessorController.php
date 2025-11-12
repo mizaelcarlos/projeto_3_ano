@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Professor;
+use App\Models\Turma;
 
 use Illuminate\Http\Request;
 
@@ -21,8 +22,9 @@ class ProfessorController extends Controller
      */
     public function create()
     {
+        $turmas = Turma::all();
         $professor = Professor::all();
-        return view('professor.create', compact('professor'));
+        return view('professor.create', compact('professor','turmas'));
     }
 
     /**
@@ -35,7 +37,7 @@ class ProfessorController extends Controller
             'email' => $request->email,
             'telefone' => $request->telefone,
             'disciplina' => $request->disciplina,
-            'turma' => $request->turma,
+            'turno' => $request->turno,
             'turma_id' => $request->turma_id,
         ]);
 
@@ -56,8 +58,9 @@ class ProfessorController extends Controller
      */
     public function edit(string $id)
     {
+        $turmas = Turma::all();
         $professor = Professor::find($id);
-        return view('professor.edit', compact('professor'));
+        return view('professor.edit', compact('professor','turmas'));
     }
 
     /**
@@ -65,13 +68,13 @@ class ProfessorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $professor = Professor::create([
+        $professor = Professor::find($id);
+        $professor = Professor::update([
             'nome' => $request->nome,
             'email' => $request->email,
             'telefone' => $request->telefone,
             'disciplina' => $request->disciplina,
-            'turma' => $request->turma,
-            'turma_id' => $request->turma_id,
+            'turno' => $request->turno
         ]);
 
         return redirect()->route('professor.index');

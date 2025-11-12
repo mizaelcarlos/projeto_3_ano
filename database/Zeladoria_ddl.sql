@@ -22,7 +22,7 @@ USE `escola`;
 -- Copiando estrutura para tabela escola.zeladoria
 CREATE TABLE IF NOT EXISTS `zeladoria` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome_zelador` varchar(45) NOT NULL,
+  `nome` varchar(45) NOT NULL,
   `setor` varchar(100) NOT NULL,
   `tarefa` varchar(100) NOT NULL,
   `turno` varchar(45) DEFAULT NULL,

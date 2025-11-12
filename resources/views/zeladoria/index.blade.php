@@ -1,10 +1,12 @@
 @extends('layouts.app')
 @section('title', 'Lista de zeladoria')
 @section('content')
-    <h1>Lista de zeladoria
-    </h1>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="mb-0">Lista de zelador</h1>
+    <a class="btn btn-primary" href="{{ route('turma.create') }}">Cadastrar</a>
+</div>
     @auth
-     <a class="btn btn-primary" href="{{ route('zeladoria.create') }}">Cadastrar</a>
+
     @endauth
     <table class="table table-sm table-bordered table-hover">
         <thead class="thead-light">
@@ -18,25 +20,29 @@
         </thead>
         <tbody>
             @foreach ($zeladorias as $zeladoria)
-            <tr class="table-warning">
+       <tr class="table-secondary">
                 <td>{{ $zeladoria->nome }}</td>
                 <td>{{ $zeladoria->setor }}</td>
                 <td>{{ $zeladoria->tarefa }}</td>
                 <td>{{ $zeladoria->turno }}</td>
                 @auth
                 <td>
-                    <div class="d-flex">
+                   <div class="d-flex">
                         <div class="m-1">
-                            <a class="btn btn-success" href="{{ route('zeladoria.edit',$zeladoria->id) }}">Editar</a>
+                            <a href="{{ route('zeladoria.edit',$zeladoria->id) }}">
+                                <img src="/icons/edit-icon.png" alt="Editar" width="24" height="24">
+                            </a>
                         </div>
                         <div class="m-1">
-                            <a class="btn btn-primary" href="{{ route('zeladoria.show',$zeladoria->id) }}">Visualizar</a>
+                            <a href="{{ route('zeladoria.show',$zeladoria->id) }}">
+                                <img src="/icons/view-icon.png" alt="Visualizar" width="24" height="24">
+                            </a>
                         </div>
                         <div class="m-1">
-                            <form action="{{ route('zeladoria.destroy',$zeladoria->id) }}" method="post">
+                            <form action="{{ route('zeladoria.destroy', $zeladoria->id) }}" method="post" onsubmit="return confirm('Tem certeza que deseja excluir esse zelador?')">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Excluir</button>
+                                    <img src="{{ asset('icons/delete-icon.png') }}" alt="Excluir" width="20" height="20">
                             </form>
                         </div>
                     </div>

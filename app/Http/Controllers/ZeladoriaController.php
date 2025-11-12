@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Zeladoria;       
-
+use App\Models\Zeladoria;
 class ZeladoriaController extends Controller
 {
     /**
@@ -13,8 +12,8 @@ class ZeladoriaController extends Controller
     public function index()
     {
         //
-         $zeladoria = Zeladoria::all();
-        return view('zeladoria.index', compact('zeladoria'));
+         $zeladorias = Zeladoria::all();
+        return view('zeladoria.index', compact('zeladorias'));
     }
 
     /**
@@ -23,7 +22,7 @@ class ZeladoriaController extends Controller
     public function create()
     {
         //
-        $zeladoria = Zeladoria::all();
+        $zeladorias = Zeladoria::all();
         return view('zeladoria.create', compact('zeladorias'));
     }
 
@@ -34,7 +33,7 @@ class ZeladoriaController extends Controller
     {
         //
        $zeladoria = Zeladoria::create([
-            'nome_zelador' => $request->nome,
+            'nome' => $request->nome,
             'setor' => $request->setor,
             'tarefa' => $request->tarefa,
             'turno' => $request->turno,
@@ -72,7 +71,7 @@ class ZeladoriaController extends Controller
         //
         $zeladoria = Zeladoria::find($id);
         $zeladoria->update([
-            'nome_zelador' => $request->nome,
+            'nome' => $request->nome,
             'setor' => $request->setor,
             'tarefa' => $request->tarefa,
             'turno' => $request->turno,

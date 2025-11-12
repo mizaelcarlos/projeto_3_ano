@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Listar professores')
 @section('content')
-    <h1>Lista de professores 
+    <h1>Lista de Professores 
     </h1>
     {{-- @auth
      <a class="btn btn-primary" href="{{ route('professor.create') }}">Cadastrar</a>
@@ -18,14 +18,14 @@
             @endauth
         </thead>
         <tbody>
-            @foreach ($professores as $professor)
+            @foreach ($professor as $professor)
             <tr class="table-warning">
                 <td>{{ $professor->nome }}</td>
                 <td>{{ $professor->email }}</td>
                 <td>{{ $professor->telefone }}</td>
                 <td>{{ $professor->disciplina }}</td> 
                 <td>{{ $professor->turno }}</td> 
-                {{-- @auth
+                @auth
                 <td>
                     <div class="d-flex">
                         <div class="m-1">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </td>
-                @endauth --}}
+                @endauth
             </tr>
             @endforeach
         </tbody>
