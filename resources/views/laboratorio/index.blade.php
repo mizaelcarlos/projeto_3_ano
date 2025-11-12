@@ -2,7 +2,7 @@
 @section('title', 'Listar Laboratórios')
 @section('content')
     <h1>Lista de Laboratórios</h1>
-    <a class="btn btn-primary mb-3" href="{{ route('laboratorios.create') }}">Cadastrar</a>
+    <a class="btn btn-primary mb-3" href="{{ route('laboratorio.create') }}">Cadastrar</a>
 
     <table class="table table-sm table-bordered table-hover text-center align-middle">
         <thead class="table-dark">
@@ -25,9 +25,9 @@
                     <td>{{ $lab->responsavel }}</td>
                     <td>
                         <div class="d-flex justify-content-center flex-wrap">
-                            <a class="btn btn-success btn-sm m-1" href="{{ route('laboratorios.edit', $lab->id) }}">Editar</a>
-                            <a class="btn btn-primary btn-sm m-1" href="{{ route('laboratorios.show', $lab->id) }}">Visualizar</a>
-                            <form action="{{ route('laboratorios.destroy', $lab->id) }}" method="POST" class="m-1">
+                            <a class="btn btn-success btn-sm m-1" href="{{ route('laboratorio.edit', $lab->id) }}">Editar</a>
+                            <a class="btn btn-primary btn-sm m-1" href="{{ route('laboratorio.show', $lab->id) }}">Visualizar</a>
+                            <form action="{{ route('laboratorio.destroy', $lab->id) }}" method="POST" class="m-1">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger btn-sm" type="submit"
