@@ -26,7 +26,6 @@
                             </div>
                         @endif
 
-                        <!-- Formulário -->
                         <form action="{{ route('disciplina.store') }}" method="POST">
                             @csrf
 
@@ -41,7 +40,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="carga_horaria" class="form-label">Carga Horária (em horas)</label>
+                                <label for="carga_horaria" class="form-label">Carga Horária</label>
                                 <input type="number" name="carga_horaria" id="carga_horaria" class="form-control" placeholder="Ex: 40" required>
                             </div>
 

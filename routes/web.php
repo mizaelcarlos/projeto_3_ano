@@ -13,6 +13,10 @@ use App\Http\Controllers\LaboratorioController;
 use App\Http\Controllers\ZeladoriaController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
+use App\Http\Controllers\CordenadorController;
+use App\Http\Controllers\EquipamentoController;
+use App\Http\Controllers\PorteiroController;
+use App\Http\Controllers\SalaController;
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -24,7 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
     Route::resource('professor', ProfessorController::class);
@@ -34,6 +37,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('disciplina', DisciplinaController::class);
     Route::resource('secretaria', SecretariaController::class);
     Route::resource('diretoria', DiretoriaController::class);
+    Route::resource('cordenador', CordenadorController::class);
+    Route::resource('equipamento', EquipamentoController::class);
+    Route::resource('porteiro', PorteiroController::class);
+    Route::resource('sala', SalaController::class);
 });
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
