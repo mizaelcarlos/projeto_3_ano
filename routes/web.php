@@ -14,7 +14,6 @@ use App\Http\Controllers\ZeladoriaController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
 
-
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
 Route::get('/dashboard', function () {
@@ -28,7 +27,6 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
-    Route::resource('diretoria', DiretoriaController::class);
     Route::resource('professor', ProfessorController::class);
 
     Route::resource('laboratorio', LaboratorioController::class);
@@ -41,7 +39,7 @@ Route::middleware('auth')->group(function () {
 
 
 
-
+Route::resource('diretoria', DiretoriaController::class);
 Route::resource('aluno', AlunoController::class);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
