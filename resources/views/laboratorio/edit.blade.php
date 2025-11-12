@@ -15,17 +15,17 @@
 
         <div class="mb-3">
             <label for="tipo" class="form-label">Tipo</label>
-            <input type="text" name="tipo" id="tipo" class="form-control" placeholder="Ex: Informática, Química, Robótica..." value="{{ $laboratorio->tipo }} required>
+            <input type="text" name="tipo" id="tipo" class="form-control" placeholder="Ex: Informática, Química, Robótica..." value="{{ $laboratorio->tipo }}" required>
         </div>
 
         <div class="mb-3">
             <label for="capacidade" class="form-label">Capacidade</label>
-            <input type="number" name="capacidade" id="capacidade" class="form-control" placeholder="Quantidade máxima de pessoas" value="{{ $laboratorio->capacidade }} required>
+            <input type="number" name="capacidade" id="capacidade" class="form-control" placeholder="Quantidade máxima de pessoas" value="{{ $laboratorio->capacidade }}" required>
         </div>
 
         <div class="mb-3">
             <label for="equipmentos" class="form-label">Equipamentos</label>
-            <textarea name="equipamentos" id="equipamentos" class="form-control" rows="3" placeholder="Liste os principais equipamentos disponíveis" value="{{ $laboratorio->equipamentos }}></textarea>
+            <textarea name="equipamentos" id="equipamentos" class="form-control" rows="3" placeholder="Liste os principais equipamentos disponíveis" value="{{ $laboratorio->equipamentos }}"></textarea>
         </div>
 
         <div class="mb-3">
