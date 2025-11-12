@@ -10,3 +10,4 @@ class Equipamento extends Model
     protected $fillable = ['nome', 'modelo', 'numserie', 'descricao'];
     public $timestamps = false;
 }
+ 

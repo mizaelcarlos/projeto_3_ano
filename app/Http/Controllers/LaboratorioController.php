@@ -13,8 +13,8 @@ class LaboratorioController extends Controller
     public function index()
     {
         //
-         $laboratorio = Laboratorio::all();
-         return view('laboratorio.index', compact('laboratorio'));
+         $laboratorios = Laboratorio::all();
+         return view('laboratorio.index', compact('laboratorios'));
  
     }
 
@@ -24,7 +24,7 @@ class LaboratorioController extends Controller
     public function create()
     {
         //
-        $laboratorio = Laboratorio::all();
+        $laboratorios = Laboratorio::all();
         return view('laboratorio.create', compact('laboratorios'));
     }
 
@@ -85,7 +85,7 @@ class LaboratorioController extends Controller
      */
     public function destroy(string $id)
      {
-        $laboratorio = $Laboratorio::find($id);
+        $laboratorio = laboratorio::find($id);
         $laboratorio->delete();
         return redirect()->route('laboratorio.index');
     }
