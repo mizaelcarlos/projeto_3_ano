@@ -1,42 +1,39 @@
 @extends('layouts.app')
-@section('title', 'Listar alunos')
+@section('title', 'Listar Salas')
 @section('content')
-<h1>Lista de alunos
+<h1>Lista de Salas
     @auth
-    <a class="btn btn-primary" style="margin-left: 735px;" href="{{ route('aluno.create') }}">Cadastrar</a>
+    <a class="btn btn-primary" style="margin-left: 735px;" href="{{ route('sala.create') }}">Cadastrar</a>
     @endauth
 </h1>
 <table class="table table-sm table-bordered table-hover">
     <thead class="thead-light">
-        <th>Nome</th>
-        <th>Código</th>
-        <th>Carga Horária</th>
+        <th>Número da sala</th>
+        <th>Número de alunos</th>
         @auth
         <th>Opções</th>
         @endauth
     </thead>
     <tbody>
-        @foreach ($disciplinas as $disciplina)
+        @foreach ($salas as $sala)
         <tr class="table-secondary">
-            <td>{{ $disciplina->id }}</td>
-            <td>{{ $disciplina->nome }}</td>
-            <td>{{ $disciplina->codigo }}</td>
-            <td>{{ $disciplina->carga_horaria}}</td>
+            <td>{{ $sala->numero_de_sala }}</td>
+            <td>{{ $sala->numero_maximoAlunos }}</td>
             @auth
             <td>
                 <div class="d-flex">
                     <div class="m-1">
-                        <a href="{{ route('disciplina.edit',$disciplina->id) }}">
+                        <a href="{{ route('sala.edit',$sala->id) }}">
                             <img src="{{ asset('icons/edit-icon.png') }}" alt="Editar">
                         </a>
                     </div>
                     <div class="m-1">
-                        <a href="{{ route('disciplina.show',$disciplina->id) }}">
+                        <a href="{{ route('sala.show',$sala->id) }}">
                             <img src="{{ asset('icons/view-icon.png') }}" alt="Visualizar">
                         </a>
                     </div>
                     <div class="m-1">
-                        <form action="{{ route('disciplina.destroy',$disciplina->id) }}" method="post">
+                        <form action="{{ route('sala.destroy',$sala->id) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button style="background: none; border: none;" type="submit">
