@@ -636,15 +636,7 @@ namespace App\Models {
     /**
      * App\Models\Boleto
      *
-     * @property int $valor
-     * @property string $data_vencimento
-     * @property int $aluno_matricula
-     * @property int $id
      * @property-read \App\Models\Aluno $alunos
-     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereAlunoMatricula($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereDataVencimento($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereValor($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto query()
@@ -2802,8 +2794,6 @@ namespace App\Models {
     }
 
     /**
-<<<<<<< HEAD
-=======
      * App\Models\Escola
      *
      * @method static \Illuminate\Database\Eloquent\Builder<Escola>|Escola newModelQuery()
@@ -3107,7 +3097,6 @@ namespace App\Models {
     }
 
     /**
->>>>>>> 4cd84510bbe2f2afbcc9df7b093fd6306c107dae
      * App\Models\Laboratorio
      *
      * @method static \Illuminate\Database\Eloquent\Builder<Laboratorio>|Laboratorio newModelQuery()
@@ -5897,10 +5886,10 @@ namespace App\Models {
      * @property string|null $turno
      * @property string $tarefa
      * @property string $setor
-     * @property string $nome
+     * @property string $nome_zelador
      * @property int $id
      * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereNome($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereNomeZelador($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereSetor($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereTarefa($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereTurno($value)
