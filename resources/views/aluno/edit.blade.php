@@ -51,6 +51,5 @@
                 value="{{ $aluno->contatoAluno?->telefone }}">
             <button class="btn btn-primary mt-3" type="submit">Salvar</button>
         </div>
-
 </form>
 @endsection
