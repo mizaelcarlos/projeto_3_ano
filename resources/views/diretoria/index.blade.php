@@ -28,6 +28,7 @@
             <td>
                 <div class="d-flex">
                     <div class="m-1">
+                        <button href="{{ route('diretoria.edit', $diretoria->id) }}">Editar</button>
                         <a class="btn btn-success" href="{{ route('diretoria.edit', $diretoria->id) }}">Editar</a>
                     </div>
                     <div class="m-1">
