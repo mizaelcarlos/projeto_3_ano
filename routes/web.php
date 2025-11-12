@@ -12,6 +12,7 @@ use App\Models\Professor;
 use App\Http\Controllers\AvaliacaoController;
 use App\Http\Controllers\LaboratorioController;
 use App\Http\Controllers\ZeladoriaController;
+use App\Http\Controllers\MonitorController;
 
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
@@ -26,28 +27,23 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
     Route::resource('diretoria', DiretoriaController::class);
     Route::resource('professor', ProfessorController::class);
-
     Route::resource('laboratorio', LaboratorioController::class);
     Route::resource('zeladoria', ZeladoriaController::class);
-    Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
     Route::resource('aluno', AlunoController::class);
 
     Route::get('/laboratorio/{id}/edit', [LaboratorioController::class, 'edit'])
     ->name('laboratorio.edit');
     Route::resource('disciplina', DisciplinaController::class);
     Route::resource('secretaria', SecretariaController::class);
+    Route::resource('diretoria', DiretoriaController::class);
+    Route::resource('monitores', MonitorController::class);
 });
-
-
-
-Route::resource('diretoria', DiretoriaController::class);
-Route::resource('aluno', AlunoController::class);
+Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
 
-require __DIR__ . '/auth.php'; 
+require __DIR__ . '/auth.php';

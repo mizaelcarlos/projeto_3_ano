@@ -2,7 +2,7 @@
 -- Servidor:                     127.0.0.1
 -- Versão do servidor:           8.0.42 - MySQL Community Server - GPL
 -- OS do Servidor:               Win64
--- HeidiSQL Versão:              12.11.0.7065
+-- HeidiSQL Versão:              12.0.0.6468
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,17 +19,17 @@
 CREATE DATABASE IF NOT EXISTS `escola` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `escola`;
 
--- Copiando estrutura para tabela escola.zeladoria
-CREATE TABLE IF NOT EXISTS `zeladoria` (
+-- Copiando estrutura para tabela escola.equipamento
+CREATE TABLE IF NOT EXISTS `equipamento` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
-  `setor` varchar(100) NOT NULL,
-  `tarefa` varchar(100) NOT NULL,
-  `turno` varchar(45) DEFAULT NULL,
+  `nome` varchar(255) NOT NULL,
+  `modelo` varchar(255) DEFAULT NULL,
+  `numserie` varchar(255) DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela escola.zeladoria: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela escola.equipamento: ~0 rows (aproximadamente)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
