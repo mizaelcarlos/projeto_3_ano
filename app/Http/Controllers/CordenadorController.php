@@ -11,7 +11,7 @@ class CordenadorController extends Controller
      */
     public function index()
     {
-        //
+       //
     }
 
     /**
