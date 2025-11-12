@@ -16,8 +16,9 @@ use App\Http\Controllers\SecretariaController;
 use App\Http\Controllers\CoordenadorController;
 use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\SalaController;
-
 use App\Http\Controllers\PorteiroController;
+use App\Http\Controllers\MaterialController;
+
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -43,6 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('equipamento', EquipamentoController::class);
     Route::resource('porteiro', PorteiroController::class);
     Route::resource('porteiro', SalaController::class);
+    Route::resource('material', MaterialController::class);
 });
 
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
