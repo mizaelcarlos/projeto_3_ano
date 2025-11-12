@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 CREATE TABLE IF NOT EXISTS disciplina (
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(200) NOT NULL,
@@ -6,14 +5,12 @@ carga_horaria int NOT NULL,
 curso_id INT,
 FOREIGN KEY (curso_id) REFERENCES curso(id)
 )ENGINE=MYISAM;
-=======
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
 -- Versão do servidor:           8.0.42 - MySQL Community Server - GPL
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              12.0.0.6468
 -- --------------------------------------------------------
->>>>>>> a510e5653872675ad0db329ed8ebfcd48d1990d1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
