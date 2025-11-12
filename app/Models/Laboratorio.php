@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Laboratorio extends Model
 {
-    protected $table = 'laboratorios';
-    protected $fillable = ['nome', 'tipo', 'capacidade', 'equipmentos', 'responsavel'];
+    protected $table = 'laboratorio';
+    protected $fillable = ['nome', 'tipo', 'capacidade', 'equipamentos', 'responsavel'];
     public $timestamps = false;
 }

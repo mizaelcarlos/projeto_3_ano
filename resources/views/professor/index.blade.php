@@ -18,14 +18,14 @@
             @endauth
         </thead>
         <tbody>
-            @foreach ($professores as $professor)
+            @foreach ($professor as $professor)
             <tr class="table-warning">
                 <td>{{ $professor->nome }}</td>
                 <td>{{ $professor->email }}</td>
                 <td>{{ $professor->telefone }}</td>
                 <td>{{ $professor->disciplina }}</td> 
                 <td>{{ $professor->turno }}</td> 
-                {{-- @auth
+                @auth
                 <td>
                     <div class="d-flex">
                         <div class="m-1">
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </td>
-                @endauth --}}
+                @endauth
             </tr>
             @endforeach
         </tbody>
