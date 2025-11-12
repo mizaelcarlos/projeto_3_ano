@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cordenador extends Model
+class Coordenador extends Model
 {
-    protected $table = 'cordenador';
+    protected $table = 'coordenador';
     protected $fillable = ['nome', 'seguimento'];
     public $timestamps = false;
 }

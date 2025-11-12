@@ -942,17 +942,17 @@ namespace App\Models {
     }
 
     /**
-     * App\Models\Cordenador
+     * App\Models\Coordenador
      *
      * @property string $seguimento
      * @property string $nome
      * @property int $id
-     * @method static \Illuminate\Database\Eloquent\Builder<Cordenador>|Cordenador whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Cordenador>|Cordenador whereNome($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Cordenador>|Cordenador whereSeguimento($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Cordenador>|Cordenador newModelQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder<Cordenador>|Cordenador newQuery()
-     * @method static \Illuminate\Database\Eloquent\Builder<Cordenador>|Cordenador query()
+     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador whereNome($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador whereSeguimento($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador newModelQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador newQuery()
+     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador query()
      * @method static mixed select($columns)
      * @method static mixed selectSub($query, $as)
      * @method static mixed selectRaw($expression, array $bindings)
@@ -1245,7 +1245,7 @@ namespace App\Models {
      * @method static mixed macroCall($method, $parameters)
      * @mixin \Illuminate\Database\Query\Builder
      */
-    class Cordenador extends \Illuminate\Database\Eloquent\Model
+    class Coordenador extends \Illuminate\Database\Eloquent\Model
     {
         //
     }

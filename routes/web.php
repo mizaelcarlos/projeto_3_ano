@@ -16,10 +16,11 @@ use App\Http\Controllers\MonitorController;
 
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
-use App\Http\Controllers\CordenadorController;
 use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\PorteiroController;
 use App\Http\Controllers\SalaController;
+use App\Http\Controllers\CoordenadorController;
+use App\Http\Controllers\BoletoController;
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -49,6 +50,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('equipamento', EquipamentoController::class);
     Route::resource('porteiro', PorteiroController::class);
     Route::resource('sala', SalaController::class);
+    Route::resource('coordenador', CoordenadorController::class);
+    Route::resource('boleto', BoletoController::class);
 });
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
