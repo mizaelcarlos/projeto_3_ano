@@ -14,6 +14,7 @@ use App\Http\Controllers\ZeladoriaController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
 use App\Http\Controllers\EquipamentoController;
+
 use App\Http\Controllers\PorteiroController;
 use App\Http\Controllers\SalaController;
 use App\Http\Controllers\MaterialController;
