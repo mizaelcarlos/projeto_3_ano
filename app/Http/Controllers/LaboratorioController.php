@@ -60,7 +60,7 @@ class LaboratorioController extends Controller
     public function edit(string $id)
     {
         $laboratorio = Laboratorio::find($id);
-        return view('lab$laboratorio.edit', compact('lab$laboratorio'));
+        return view('laboratorio.edit', compact('laboratorio'));
     }
 
     /**
@@ -68,7 +68,8 @@ class LaboratorioController extends Controller
      */
     public function update(Request $request, string $id)
      {
-         $laboratorio = Laboratorio::update([
+        $laboratorio = Laboratorio::find($id);
+        $laboratorio->update([
             'nome' => $request->nome,
             'tipo' => $request->tipo,
             'capacidade' => $request->capacidade,
