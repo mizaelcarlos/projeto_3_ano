@@ -66,9 +66,9 @@ class PorteiroController extends Controller
         $porteiro = Porteiro::find($id);
         $porteiro->update([
             'nome' => $request->nome,
-            'gestao' => $request->gestao,
-            'data_inicio' => $request->data_inicio,
-            'data_fim' => $request->data_fim
+            'turno' => $request->turno,
+            'horario_entrada' => $request->horario_entrada,
+            'horario_saida' => $request->horario_saida
         ]);
 
         return redirect()->route('porteiro.index');

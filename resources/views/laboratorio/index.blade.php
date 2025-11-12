@@ -1,11 +1,14 @@
 @extends('layouts.app')
 @section('title', 'Listar Laboratórios')
 @section('content')
-    <h1>Lista de Laboratórios</h1>
-    <a class="btn btn-primary mb-3" href="{{ route('laboratorio.create') }}">Cadastrar</a>
 
-    <table class="table table-sm table-bordered table-hover text-center align-middle">
-        <thead class="table-dark">
+    <div class="d-flex justify-content-between">
+        <h1>Lista de Laboratórios</h1>
+        <a class="btn btn-primary mb-3 mt-2" href="{{ route('laboratorio.create') }}">Cadastrar</a>
+    </div>
+
+    <table class="table table-sm table-bordered table-hover">
+        <thead class="thead-light">
             <tr>
                 <th>Nome</th>
                 <th>Tipo</th>
@@ -21,18 +24,25 @@
                     <td>{{ $lab->nome }}</td>
                     <td>{{ $lab->tipo }}</td>
                     <td>{{ $lab->capacidade }}</td>
-                    <td>{{ $lab->equipmentos }}</td>
+                    <td>{{ $lab->equipamentos }}</td>
                     <td>{{ $lab->responsavel }}</td>
                     <td>
                         <div class="d-flex justify-content-center flex-wrap">
-                            <a class="btn btn-success btn-sm m-1" href="{{ route('laboratorio.edit', $lab->id) }}">Editar</a>
-                            <a class="btn btn-primary btn-sm m-1" href="{{ route('laboratorio.show', $lab->id) }}">Visualizar</a>
-                            <form action="{{ route('laboratorio.destroy', $lab->id) }}" method="POST" class="m-1">
+
+                            <a class="d-flex align-items-center" href="{{ route('laboratorio.edit', $lab->id) }}">
+                                <img src="{{ asset('icons/edit-icon.png') }}" alt="">
+                            </a>
+
+                            <a class="d-flex align-items-center" href="{{ route('laboratorio.show', $lab->id) }}">
+                                <img src="{{ asset('icons/view-icon.png') }}" alt="">
+                            </a>
+
+                            <form action="{{ route('laboratorio.destroy', $lab->id) }}" method="POST" class="d-flex align-items-center">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger btn-sm" type="submit"
+                                <button type="submit" style="border:none; background: none;"
                                     onclick="return confirm('Tem certeza que deseja excluir este laboratório?')">
-                                    Excluir
+                                    <img src="{{ asset('icons/delete-icon.png') }}" alt="">
                                 </button>
                             </form>
                         </div>
