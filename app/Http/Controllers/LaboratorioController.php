@@ -14,7 +14,7 @@ class LaboratorioController extends Controller
     {
         //
          $laboratorios = Laboratorio::all();
-         return view('laboratorio.index', compact('laboratorio'));
+         return view('laboratorio.index', compact('laboratorios'));
  
     }
 
