@@ -11,7 +11,8 @@ class CordenadorController extends Controller
      */
     public function index()
     {
-        //
+        $cordenadores = Cordenador::all();
+        return view('cordenador.index', compact('cordenadores'));
     }
 
     /**
