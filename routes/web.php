@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('secretaria', SecretariaController::class);
     Route::resource('diretoria', DiretoriaController::class);
 
-    Route::resource('cordenador', CordenadorController::class);
+    Route::resource('cordenador', CoordenadorController::class);
     Route::resource('equipamento', EquipamentoController::class);
     Route::resource('porteiro', PorteiroController::class);
 
