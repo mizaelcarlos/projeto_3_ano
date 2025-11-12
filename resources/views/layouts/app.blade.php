@@ -29,40 +29,84 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Aluno</a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('aluno.create') }}">Cadastrar</a>
-                        <a class="dropdown-item" href="{{ route('aluno.index') }}">Listar</a>
+                            <a class="dropdown-item" href="{{ route('aluno.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('aluno.index') }}">Listar</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Professor</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cordenação</a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('aluno.create') }}">Cadastrar</a>
-                        <a class="dropdown-item" href="{{ route('aluno.index') }}">Listar</a>
+                            <a class="dropdown-item" href="{{ route('cordenador.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('cordenador.index') }}">Listar</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Curso</a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('curso.create') }}">Cadastrar</a>
-                        <a class="dropdown-item" href="{{ route('curso.index') }}">Listar</a>
+                            <a class="dropdown-item" href="{{ route('curso.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('curso.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Disciplina</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('disciplina.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('disciplina.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Diretoria</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('diretoria.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('diretoria.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Laboratorio</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('laboratorio.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('laboratorio.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Professor</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('professor.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('professor.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Secretaria</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('secretaria.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('secretaria.index') }}">Listar</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Turma</a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('turma.create') }}">Cadastrar</a>
-                        <a class="dropdown-item" href="{{ route('turma.index') }}">Listar</a>
+                            <a class="dropdown-item" href="{{ route('turma.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('turma.index') }}">Listar</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <div>
-                            {{ Auth::user()->name }}
-                            <img src="{{ asset('Auth::user()->foto') }}" alt="">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Zeladoria</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('zeladoria.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('zeladoria.index') }}">Listar</a>
                         </div>
-                        <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                            <button type="submit" class="btn btn-danger">Sair</button>
-                        </form>
+                    </li>
+
+                    <li class="nav-item ml-auto d-flex align-items-center">
+                        <div class="d-flex align-items-center">
+                            <span class="mr-2 font-weight-bold text-primary">{{ Auth::user()->name }}</span>
+                            <form method="POST" action="{{ route('logout') }}" class="m-0">
+                                @csrf
+                                <button type="submit" class="nav-link btn btn-link text-danger p-0" style="font-weight: 500;">
+                                    Sair
+                                </button>
+                            </form>
+                        </div>
                     </li>
                 </ul>
                 @endauth
