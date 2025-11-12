@@ -13,7 +13,7 @@ class LaboratorioController extends Controller
     public function index()
     {
         //
-         $laboratorio = Laboratorio::all();
+         $laboratorios = Laboratorio::all();
          return view('laboratorio.index', compact('laboratorio'));
  
     }
@@ -24,7 +24,7 @@ class LaboratorioController extends Controller
     public function create()
     {
         //
-        $laboratorio = Laboratorio::all();
+        $laboratorios = Laboratorio::all();
         return view('laboratorio.create', compact('laboratorios'));
     }
 
