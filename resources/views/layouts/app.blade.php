@@ -34,10 +34,19 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Professor</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Laboratorio</a>
                         <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ route('professor.create') }}">Cadastrar</a>
                         <a class="dropdown-item" href="{{ route('professor.index') }}">Listar</a>
+                        <a class="dropdown-item" href="{{ route('laboratorio.create') }}">Cadastrar</a>
+                        <a class="dropdown-item" href="{{ route('laboratorio.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Zeladoria</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ route('zeladoria.create') }}">Cadastrar</a>
+                        <a class="dropdown-item" href="{{ route('zeladoria.index') }}">Listar</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -48,10 +57,31 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Disciplina</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ route('disciplina.create') }}">Cadastrar</a>
+                        <a class="dropdown-item" href="{{ route('disciplina.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Turma</a>
                         <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ route('turma.create') }}">Cadastrar</a>
                         <a class="dropdown-item" href="{{ route('turma.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Secretaria</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ route('secretaria.create') }}">Cadastrar</a>
+                        <a class="dropdown-item" href="{{ route('secretaria.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Professor</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ route('professor.create') }}">Cadastrar</a>
+                        <a class="dropdown-item" href="{{ route('professor.index') }}">Listar</a>
                         </div>
                     </li>
                     <li class="nav-item">
