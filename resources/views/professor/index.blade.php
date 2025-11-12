@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Listar professores')
 @section('content')
-    <h1>Lista de professores 
+    <h1>Lista de Professores 
     </h1>
     {{-- @auth
      <a class="btn btn-primary" href="{{ route('professor.create') }}">Cadastrar</a>
