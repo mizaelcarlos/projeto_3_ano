@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Listar alunos')
 @section('content')
-<h1>Lista de alunos
+<h1>Lista de Disciplinas
     @auth
-    <a class="btn btn-primary" style="margin-left: 735px;" href="{{ route('aluno.create') }}">Cadastrar</a>
+    <a class="btn btn-primary" style="margin-left: 735px;" href="{{ route('disciplina.create') }}">Cadastrar</a>
     @endauth
 </h1>
 <table class="table table-sm table-bordered table-hover">
