@@ -14,6 +14,7 @@ use App\Http\Controllers\ZeladoriaController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
 use App\Http\Controllers\EquipamentoController;
+use App\Http\Controllers\StaffController;
 
 use App\Http\Controllers\PorteiroController;
 
@@ -39,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('cordenador', CordenadorController::class);
     Route::resource('equipamento', EquipamentoController::class);
     Route::resource('porteiro', PorteiroController::class);
+    Route::resource('staff', StaffController::class);
 });
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
