@@ -21,14 +21,12 @@ class DiretoriaController extends Controller
      */
     public function create()
     {
-        $diretorias = Diretoria::all();
-        return view('diretoria.create', compact('diretorias'));
+        return view('diretoria.create');
     }
 
-
     /**
-     * Store a newly created resource in storage.
-     */
+ * Store a newly created resource in storage.
+ */
     public function store(Request $request)
     {
 
