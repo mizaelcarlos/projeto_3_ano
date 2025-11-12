@@ -14,7 +14,7 @@ class LaboratorioController extends Controller
     {
         //
          $laboratorios = Laboratorio::all();
-         return view('laboratorio.index', compact('laboratorio'));
+         return view('laboratorio.index', compact('laboratorios'));
  
     }
 
@@ -85,7 +85,7 @@ class LaboratorioController extends Controller
      */
     public function destroy(string $id)
      {
-        $laboratorio = $Laboratorio::find($id);
+        $laboratorio = laboratorio::find($id);
         $laboratorio->delete();
         return redirect()->route('laboratorio.index');
     }

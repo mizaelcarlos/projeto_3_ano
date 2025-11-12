@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sala;
 
-class CordenadorController extends Controller
+class SalaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       //
+        $salas = Sala::all();
+        return view('sala.index', compact('salas'));
     }
 
     /**
@@ -19,7 +21,7 @@ class CordenadorController extends Controller
      */
     public function create()
     {
-        //
+        return view('sala.create');
     }
 
     /**
@@ -27,7 +29,9 @@ class CordenadorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Sala::create($request->all());
+
+        return redirect()->route('sala.index');
     }
 
     /**
@@ -35,7 +39,8 @@ class CordenadorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $sala = Sala::find($id);
+        return view('sala.show', compact('sala'));
     }
 
     /**
@@ -43,7 +48,9 @@ class CordenadorController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //$salas = sala::all();
+        $sala = Sala::find($id);
+        return view('sala.edit', compact('sala'));
     }
 
     /**
@@ -51,7 +58,9 @@ class CordenadorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $sala = Sala::find($id);
+        $sala->update($request->all());
+        return redirect()->route('sala.index');
     }
 
     /**
@@ -59,6 +68,8 @@ class CordenadorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $sala = Sala::find($id);
+        $sala->delete();
+        return redirect()->route('sala.index');
     }
 }

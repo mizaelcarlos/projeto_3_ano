@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CordenadorController extends Controller
+class MaterialController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+     public function index()
     {
-       //
+        $material = Material::all();
+        
+        return view('material.index', compact('material'));
     }
 
     /**
@@ -19,7 +18,8 @@ class CordenadorController extends Controller
      */
     public function create()
     {
-        //
+        $material = Material::all();
+        return view('material.create', compact('material'));
     }
 
     /**
@@ -27,7 +27,9 @@ class CordenadorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+            Turma::create($request->all());
+
+        return redirect()->route('material.index');
     }
 
     /**
@@ -51,7 +53,9 @@ class CordenadorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+           $matricula = Matricula::find($id);
+        $matricula->update($request->all());
+        return redirect()->route('matricula.index');
     }
 
     /**
@@ -59,6 +63,8 @@ class CordenadorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+         $material = Material::find($id);
+        $material->delete();
+        return redirect()->route('material.index');
     }
 }
