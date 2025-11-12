@@ -1,10 +1,14 @@
-<h1>Publicações</h1>
-<p>{{ $avaliacao->likes }}</p>
-<form  action="{{ route('like') }}" method="POST">
-    @csrf
-    <input type="hidden" name="publicacao_id" value="1">
-    <button type="submit" class="btn btn-primary">
-        <img src="{{ asset('flecha_cima_cheia.svg') }}" alt="Incrementar" style="width:20px; height:20px;">
-    </button>
-</form>
+@extends('layouts.app')
+@section('title', ' Login')
+@section('content')
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
 
+
+
+<div class="container text-center mt-5">
+    <h1 class="mb-4">🎓 Sistema de Controle Acadêmico</h1>
+    <p class="mb-4">Gerencie de forma prática e integrada todos os setores da instituição.</p>
+    <a href="{{ route('login') }}" class="btn btn-primary btn-lg">Realizar Login</a>
+</div>
+
+@endsection
