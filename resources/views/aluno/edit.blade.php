@@ -22,7 +22,7 @@
             <input type="text" class="form-control" name="email" id="email" value="{{ $aluno->email }}">
         </div>
         <div class="col-md-6">
-            <label for="data_nascimento" class="form-label">Datas de nascimento</label>
+            <label for="data_nascimento" class="form-label">Data de nascimento</label>
             <input type="date" class="form-control" name="data_nascimento" id="data_nascimento"
                 value="{{ $aluno->data_nascimento }}">
         </div>
@@ -45,17 +45,12 @@
             </select>
         </div>
 
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" class="form-control" name="telefone" id="telefone"
-                    value="{{ $aluno->contatoAluno?->telefone }}">
-            </div>
+        <div class="col-md-6">
+            <label for="telefone" class="form-label">Telefone</label>
+            <input type="text" class="form-control" name="telefone" id="telefone"
+                value="{{ $aluno->contatoAluno?->telefone }}">
+            <button class="btn btn-primary mt-3" type="submit">Salvar</button>
+        </div>
 
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <button type="submit">Salvar</button>
-                </div>
-            </div>
 </form>
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Cadastrar aluno')
 @section('content')
-<h1>Cadastro de Aluno</h1>
+<h1 class="mt-2">Cadastro de Aluno</h1>
 <form action="{{ route('aluno.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row mb-3">
@@ -50,6 +50,6 @@
         </div>
     </div>
 
-    <button class="btn btn-primary" type="submit">Salvar</button>
+    <button class="btn btn-primary" type="submit">Cadastrar</button>
 </form>
 @endsection
