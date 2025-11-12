@@ -7,7 +7,7 @@
 
     <form action="{{  route("laboratorio.update",$laboratorio->id) }}" method="POST" class="mt-4" enctype="multipart/form-data">
         @csrf
-
+        @method('PUT')
         <div class="mb-3">
             <label for="nome" class="form-label">Nome do Laboratório</label>
             <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite o nome do laboratório" value="{{ $laboratorio->nome }}" required>
@@ -24,8 +24,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="equipmentos" class="form-label">Equipamentos</label>
-            <textarea name="equipamentos" id="equipamentos" class="form-control" rows="3" placeholder="Liste os principais equipamentos disponíveis" value="{{ $laboratorio->equipamentos }}"></textarea>
+            <label for="equipamentos" class="form-label">Equipamentos</label>
+            <textarea name="equipamentos" id="equipamentos" class="form-control" rows="3" value="{{ $laboratorio->equipamentos }}"></textarea>
         </div>
 
         <div class="mb-3">
