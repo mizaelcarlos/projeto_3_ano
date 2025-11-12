@@ -20,4 +20,9 @@ class Aluno extends Model
     {
         return $this->hasOne(ContatoAluno::class);
     }
+
+    public function boletos()
+    {
+        return $this->hasMany(Boleto::class, 'aluno_matricula', 'matricula');
+    }
 }

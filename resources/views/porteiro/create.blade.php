@@ -16,11 +16,11 @@
         </div>
         <div class="col-md-6">
             <label for="cpf" class="form-label">Horario de entrada:</label>
-            <input type="text" class="form-control" name="horario_entrada" id="horario_entrada">
+            <input type="time" class="form-control" name="horario_entrada" id="horario_entrada">
         </div>
         <div class="col-md-6">
             <label for="cpf" class="form-label">Horario de saida:</label>
-            <input type="text" class="form-control" name="horario_saida" id="horario_saida">
+            <input type="time" class="form-control" name="horario_saida" id="horario_saida">
         </div>
     </div>
     <button class="btn btn-primary" type="submit">Salvar</button>

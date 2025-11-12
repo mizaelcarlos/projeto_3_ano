@@ -2,7 +2,7 @@
 @section('title', 'Cadastrar Professor')
 @section('content')
     <h1>Cadastro de Professor</h1>
-    <form action="{{ route('diretoria.store') }}" method="post">
+    <form action="{{ route('professor.store') }}" method="post">
         @csrf
 
         <div class="row mb-3">
@@ -15,7 +15,6 @@
                 <input type="text" class="form-control" name="email" id="email">
             </div>
         </div>
-
         <div class="row mb-3">
             <div class="col-md-6">
                 <label for="telefone" class="form-label">Telefone</label>
