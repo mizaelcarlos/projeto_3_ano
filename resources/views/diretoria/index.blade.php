@@ -27,13 +27,13 @@
                 <td>
                     <div class="d-flex">
                         <div class="m-1">
-                            <a class="btn btn-success" href="{{ route('aluno.edit',$aluno->id) }}">Editar</a>
+                            <a class="btn btn-success" href="{{ route('diretoria.edit',$diretoria->id) }}">Editar</a>
                         </div>
                         <div class="m-1">
-                            <a class="btn btn-primary" href="{{ route('aluno.show',$aluno->id) }}">Visualizar</a>
+                            <a class="btn btn-primary" href="{{ route('diretoria.show',$diretoria->id) }}">Visualizar</a>
                         </div>
                         <div class="m-1">
-                            <form action="{{ route('aluno.destroy',$aluno->id) }}" method="post">
+                            <form action="{{ route('diretoria.destroy',$diretoria->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Excluir</button>
