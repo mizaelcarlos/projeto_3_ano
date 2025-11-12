@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('coordenador', CoordenadorController::class);
     Route::resource('equipamento', EquipamentoController::class);
     Route::resource('porteiro', PorteiroController::class);
-    Route::resource('porteiro', SalaController::class);
+    Route::resource('sala', SalaController::class);
 });
 
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
