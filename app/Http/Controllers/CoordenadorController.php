@@ -27,8 +27,7 @@ class CoordenadorController extends Controller
      */
     public function store(Request $request)
     {
-        coordenador::create($request->all());
-
+        Coordenador::create($request->all());
         return redirect()->route('coordenador.index');
     }
 
