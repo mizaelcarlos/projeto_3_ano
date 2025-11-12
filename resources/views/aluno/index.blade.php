@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Listar alunos')
 @section('content')
-<h1>Lista de alunos
+<h1 class="mt-2">Lista de alunos
     @auth
     <a class="btn btn-primary" style="margin-left: 735px;" href="{{ route('aluno.create') }}">Cadastrar</a>
     @endauth
