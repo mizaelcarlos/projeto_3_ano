@@ -16,8 +16,9 @@ use App\Http\Controllers\MonitorController;
 
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
-use App\Http\Controllers\CordenadorController;
+use App\Http\Controllers\CoordenadorController;
 use App\Http\Controllers\EquipamentoController;
+use App\Http\Controllers\SalaController;
 
 use App\Http\Controllers\PorteiroController;
 
@@ -45,10 +46,15 @@ Route::middleware('auth')->group(function () {
     Route::resource('disciplina', DisciplinaController::class);
     Route::resource('secretaria', SecretariaController::class);
     Route::resource('diretoria', DiretoriaController::class);
+<<<<<<< HEAD
     Route::resource('monitores', MonitorController::class);
     Route::resource('cordenador', CordenadorController::class);
+=======
+    Route::resource('coordenador', CoordenadorController::class);
+>>>>>>> f61f71b5a375786a23db52bef318f5a48eaf2963
     Route::resource('equipamento', EquipamentoController::class);
     Route::resource('porteiro', PorteiroController::class);
+    Route::resource('porteiro', SalaController::class);
 });
 
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
