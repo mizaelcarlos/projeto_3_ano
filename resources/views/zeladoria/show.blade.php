@@ -1,9 +1,18 @@
 @extends('layouts.app')
-@section('title', 'Dados da Zeladoria')
+
+@section('title', 'Detalhes da Zeladoria')
+
 @section('content')
-    <h1>Dados da Zeladoria</h1>
-     <p>Nome: {{ $zeladoria->nome }}</p>
-     <p>Setor: {{ $zeladoria->setor}}</p>
-     <p>Tarefa: {{ $zeladoria->tarefa}}</p>
-     <p>Turno: {{ $zeladoria->turno}}</p>
+<div class="container mt-4">
+    <h2>Detalhes da Zeladoria</h2>
+
+    <p>Nome do zelador: {{ $zeladoria->nome_zelador }}</p>
+    <p>Setor: {{ $zeladoria->setor }}</p>
+    <p>Tarefa: {{ $zeladoria->tarefa }}</p>
+    <p>Data do serviço: {{ $zeladoria->data_servico }}</p>
+    <p>Turno: {{ $zeladoria->turno }}</p>
+    <p>Observação: {{ $zeladoria->observacao }}</p>
+
+    <a href="{{ route('zeladoria.index') }}">Voltar</a>
+</div>
 @endsection
