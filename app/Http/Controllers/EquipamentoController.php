@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipamento;
 use Illuminate\Http\Request;
 
 class EquipamentoController extends Controller
@@ -21,14 +22,13 @@ class EquipamentoController extends Controller
     public function store(Request $request)
     {
         Equipamento::create($request->all());
-
         return redirect()->route('equipamento.index');
     }
 
     public function show(string $id)
     {
-        $equipamento = Equipamento::find($id);
-        return view('equipamento.show', compact('equipamento'));
+        // $equipamento = Equipamento::find($id);
+        // return view('equipamento.show', compact('equipamento'));
     }
 
     public function update(Request $request, string $id)
