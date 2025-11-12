@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Zeladoria;
 
 class ZeladoriaController extends Controller
 {
@@ -12,6 +13,8 @@ class ZeladoriaController extends Controller
     public function index()
     {
         //
+         $zeladorias = Zeladoria::all();
+        return view('zeladoria.index', compact('zeladorias'));
     }
 
     /**
@@ -20,6 +23,8 @@ class ZeladoriaController extends Controller
     public function create()
     {
         //
+        $zeladorias = Zeladoria::all();
+        return view('zeladoria.create', compact('zeladorias'));
     }
 
     /**
@@ -28,6 +33,15 @@ class ZeladoriaController extends Controller
     public function store(Request $request)
     {
         //
+       $zeladoria = Zeladoria::create([
+            'nome' => $request->nome,
+            'setor' => $request->setor,
+            'tarefa' => $request->tarefa,
+            'turno' => $request->turno,
+
+        ]);
+
+        return redirect()->route('zeladoria.index');
     }
 
     /**
@@ -36,6 +50,8 @@ class ZeladoriaController extends Controller
     public function show(string $id)
     {
         //
+        $zeladoria = Zeladoria::find($id);
+        return view('zeladoria.show', compact('zeladoria'));
     }
 
     /**
@@ -44,6 +60,8 @@ class ZeladoriaController extends Controller
     public function edit(string $id)
     {
         //
+        $zeladoria = Zeladoria::find($id);
+        return view('zeladoria.edit', compact('zeladoria'));
     }
 
     /**
@@ -52,6 +70,15 @@ class ZeladoriaController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $zeladoria = Zeladoria::find($id);
+        $zeladoria->update([
+            'nome' => $request->nome,
+            'setor' => $request->setor,
+            'tarefa' => $request->tarefa,
+            'turno' => $request->turno,
+        ]);
+
+        return redirect()->route('zeladoria.index');
     }
 
     /**
@@ -60,5 +87,8 @@ class ZeladoriaController extends Controller
     public function destroy(string $id)
     {
         //
+        $zeladoria = Zeladoria::find($id);
+        $zeladoria->delete();
+        return redirect()->route('zeladoria.index');
     }
 }

@@ -24,4 +24,69 @@
                     </div>
                 @endif
 
-               
+                @if(session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('error') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                @if($disciplina->count() > 0)
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Código</th>
+                                    <th>Carga Horária</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($disciplina as $disc)
+                                    <tr>
+                                        <td>{{ $disc->id }}</td>
+                                        <td>{{ $disc->nome }}</td>
+                                        <td>{{ $disc->codigo }}</td>
+                                        <td>{{ $disc->carga_horaria }}h</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <a href="{{ route('disciplina.show', $disc->id) }}" 
+                                                   class="btn btn-info btn-sm" title="Visualizar">
+                                                    <i class="fas fa-eye"></i> Ver
+                                                </a>
+                                                <a href="{{ route('disciplina.edit', $disc->id) }}" 
+                                                   class="btn btn-warning btn-sm" title="Editar">
+                                                    <i class="fas fa-edit"></i> Editar
+                                                </a>
+                                                <form action="{{ route('disciplina.destroy', $disc->id) }}" 
+                                                      method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" 
+                                                            class="btn btn-danger btn-sm" 
+                                                            title="Excluir"
+                                                            onclick="return confirm('Tem certeza que deseja excluir esta disciplina?')">
+                                                        <i class="fas fa-trash"></i> Excluir
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                @else
+                    <div class="alert alert-info text-center">
+                        <h4>Nenhuma disciplina cadastrada</h4>
+                        <p>"Nova Disciplina".</p>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+</body>
+</html>
