@@ -9,7 +9,7 @@
         <div class="row mb-3">
             <div class="col-md-6">
                 <label for="descricao" class="form-label">Descrição</label>
-                <input type="text" class="form-control" name="descricao" id="descricao" value="{{ $turma->descricao }}">
+                <input type="text" class="form-control" name="descricao" id="descricao" value="{{ $secretaria->descricao }}">
             </div>
             <div class="col-md-6">
                 <label for="curso_id" class="form-label">Curso</label>

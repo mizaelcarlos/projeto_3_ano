@@ -29,16 +29,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('professor', ProfessorController::class);
     Route::resource('laboratorio', LaboratorioController::class);
     Route::resource('zeladoria', ZeladoriaController::class);
-    Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
     Route::resource('aluno', AlunoController::class);
     Route::resource('disciplina', DisciplinaController::class);
     Route::resource('secretaria', SecretariaController::class);
+    Route::resource('diretoria', DiretoriaController::class);
 });
-
-
-
-Route::resource('diretoria', DiretoriaController::class);
-Route::resource('aluno', AlunoController::class);
+Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
 
