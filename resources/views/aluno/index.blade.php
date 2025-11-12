@@ -18,7 +18,7 @@
     </thead>
     <tbody>
         @foreach ($alunos as $aluno)
-        <tr class="table-warning">
+        <tr class="table-secondary">
             <td>{{ $aluno->matricula }}</td>
             <td>{{ $aluno->nome }}</td>
             <td>{{ $aluno->email }}</td>
@@ -41,7 +41,7 @@
                             @csrf
                             @method('DELETE')
                             <button style="background: none; border: none;" type="submit">
-                                <img src="{{ asset('icons/delete-icon.png') }}" alt="">
+                                <img src="{{ asset('icons/delete-icon.png') }}" alt="Deletar">
                             </button>
                         </form>
                     </div>
