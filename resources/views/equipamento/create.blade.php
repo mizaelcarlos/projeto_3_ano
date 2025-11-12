@@ -12,17 +12,17 @@
 
     <div class="col-md-6">
         <label for="modelo" class="form-label">Modelo</label>
-        <input type="date" class="form-control" name="modelo" id="modelo">
+        <input type="text" class="form-control" name="modelo" id="modelo">
     </div>
 
     <div class="col-md-6">
         <label for="modelo" class="form-label">Número de Série</label>
-        <input type="date" class="form-control" name="numserie" id="numserie">
+        <input type="text" class="form-control" name="numserie" id="numserie">
     </div>
 
     <div class="col-md-6">
         <label for="modelo" class="form-label">Descrição</label>
-        <input type="date" class="form-control" name="descricao" id="descricao">
+        <input type="text" class="form-control" name="descricao" id="descricao">
     </div>
 
         <button class="btn btn-primary" type="submit">Salvar</button>

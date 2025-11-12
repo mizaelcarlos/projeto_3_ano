@@ -37,7 +37,8 @@ class MaterialController extends Controller
      */
     public function show(string $id)
     {
-        //
+           $material = Material::find($id);
+        return view('material.show', compact('material'));
     }
 
     /**
@@ -45,7 +46,9 @@ class MaterialController extends Controller
      */
     public function edit(string $id)
     {
-        //
+           $material = Material::find($id);
+        $material = Material::all();
+        return view('material.edit', compact('material'));
     }
 
     /**
@@ -53,9 +56,9 @@ class MaterialController extends Controller
      */
     public function update(Request $request, string $id)
     {
-           $matricula = Matricula::find($id);
-        $matricula->update($request->all());
-        return redirect()->route('matricula.index');
+           $material = Material::find($id);
+        $material->update($request->all());
+        return redirect()->route('material.index');
     }
 
     /**

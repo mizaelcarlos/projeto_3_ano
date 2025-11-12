@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('title', 'Sistema de controle Acadêmico')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   
 
     <style>
         body {
@@ -39,6 +40,13 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{ route('curso.create') }}">Cadastrar</a>
                             <a class="dropdown-item" href="{{ route('curso.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Coordenação</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('coordenador.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('coordenador.index') }}">Listar</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -95,6 +103,13 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{ route('equipamento.create') }}">Cadastrar</a>
                             <a class="dropdown-item" href="{{ route('equipamento.index') }}">Listar</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Porteiro</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('porteiro.create') }}">Cadastrar</a>
+                            <a class="dropdown-item" href="{{ route('porteiro.index') }}">Listar</a>
                         </div>
                     </li>
 
