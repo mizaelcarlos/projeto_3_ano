@@ -14,6 +14,7 @@ use App\Http\Controllers\ZeladoriaController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
 use App\Http\Controllers\CordenadorController;
+use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\PorteiroController;
 use App\Http\Controllers\SalaController;
 
@@ -37,6 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('secretaria', SecretariaController::class);
     Route::resource('diretoria', DiretoriaController::class);
     Route::resource('cordenador', CordenadorController::class);
+    Route::resource('equipamento', EquipamentoController::class);
     Route::resource('porteiro', PorteiroController::class);
     Route::resource('sala', SalaController::class);
 });

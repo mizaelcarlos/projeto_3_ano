@@ -25,7 +25,7 @@
 
         <div class="mb-3">
             <label for="equipmentos" class="form-label">Equipamentos</label>
-            <textarea name="equipmentos" id="equipamentos" class="form-control" rows="3" placeholder="Liste os principais equipamentos disponíveis"></textarea>
+            <textarea name="equipamentos" id="equipamentos" class="form-control" rows="3" placeholder="Liste os principais equipamentos disponíveis"></textarea>
         </div>
 
         <div class="mb-3">
