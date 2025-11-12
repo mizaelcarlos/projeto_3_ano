@@ -3,7 +3,7 @@
 @section('content')
 <h1>Dados do Porteiro:</h1>
 <p>Nome: {{ $porteiro->nome }}</p>
-<p>Carga_horaria: {{ $porteiro->turno }}</p>
-<p>Carga_horaria: {{ $porteiro->horario_entrada }}</p>
-<p>Carga_horaria: {{ $porteiro->horario_saida }}</p>
+<p>Turno: {{ $porteiro->turno }}</p>
+<p>Horaria de entrada: {{ $porteiro->horario_entrada }}</p>
+<p>Horaria de saida: {{ $porteiro->horario_saida }}</p>
 @endsection
