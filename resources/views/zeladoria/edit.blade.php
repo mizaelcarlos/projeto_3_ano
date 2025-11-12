@@ -12,7 +12,7 @@
         <label for="">Tarefa</label>
         <input type="text" name="tarefa" id="tarefa" value="{{ $zeladoria->tarefa }}">
         <label for="">Turno</label>
-        <input type="date" name="turno" id="turno" value="{{ $zeladoria->turno }}">
+        <input type="text" name="turno" id="turno" value="{{ $zeladoria->turno }}">
         <button type="submit">Salvar</button>
     </form>
 @endsection
