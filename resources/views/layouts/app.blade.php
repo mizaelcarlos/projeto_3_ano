@@ -93,7 +93,6 @@
                     <li class="nav-item ml-auto d-flex align-items-center">
                         <div class="d-flex align-items-center">
                             <span class="mr-2 font-weight-bold text-primary">{{ Auth::user()->name }}</span>
-                            <img src="{{ asset(Auth::user()->foto) }}" alt="Foto do usuário" class="rounded-circle mr-3 border" width="38" height="38">
                             <form method="POST" action="{{ route('logout') }}" class="m-0">
                                 @csrf
                                 <button type="submit" class="nav-link btn btn-link text-danger p-0" style="font-weight: 500;">
