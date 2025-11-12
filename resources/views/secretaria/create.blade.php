@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-6">
             <label for="cpf" class="form-label">CPF</label>
-            <input type="text" class="form-control" name="gestao" id="cpf">
+            <input type="text" class="form-control" name="cpf" id="cpf">
         </div>
     </div>
     <div class="col-md-6">
