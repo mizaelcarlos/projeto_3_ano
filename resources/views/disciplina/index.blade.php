@@ -1,92 +1,69 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Disciplinas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-12">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h1>Lista de Disciplinas</h1>
-                    <a href="{{ route('disciplina.create') }}" class="btn btn-primary">
-                        Nova Disciplina
-                    </a>
-                </div>
-
-                @if(session('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+@extends('layouts.app')
+@section('title', 'Listar disciplina')
+@section('content')
+    <h1>Lista da disciplina</h1>
+    @auth
+        <a class="btn btn-primary mb-3" href="{{ route('diretoria.create') }}">Cadastrar</a>
+    @endauth
+    <table class="table table-sm table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Nome</th>
+                <th>Código</th>
+                <th>Carga horária</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($disciplinas as $disciplina)
+            <tr class="table-warning">
+                <td>{{ $disc->id }}</td>
+                <td>{{ $disc->nome }}</td>
+                <td>{{ $disc->codigo }}</td>
+                <td>{{ $disc->carga_horaria }}h</td>
+                @auth
+                <td>
+                    <div class="d-flex">
+                        <div class="m-1">
+                            <a class="btn btn-success" href="{{ route('diretoria.edit',$diretoria->id) }}">Editar</a>
+                        </div>
+                        <div class="m-1">
+                            <a class="btn btn-primary" href="{{ route('diretoria.show',$diretoria->id) }}">Visualizar</a>
+                        </div>
+                        <div class="m-1">
+                            <form action="{{ route('diretoria.destroy',$diretoria->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">Excluir</button>
+                            </form>
+                        </div>
                     </div>
-                @endif
-
-                @if(session('error'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ session('error') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-
-                @if($disciplina->count() > 0)
-                    <div class="table-responsive">
-                        <table class="table table-striped table-hover">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>Código</th>
-                                    <th>Carga Horária</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($disciplina as $disc)
-                                    <tr>
-                                        <td>{{ $disc->id }}</td>
-                                        <td>{{ $disc->nome }}</td>
-                                        <td>{{ $disc->codigo }}</td>
-                                        <td>{{ $disc->carga_horaria }}h</td>
-                                        <td>
-                                            <div class="btn-group" role="group">
-                                                <a href="{{ route('disciplina.show', $disc->id) }}" 
-                                                   class="btn btn-info btn-sm" title="Visualizar">
-                                                    <i class="fas fa-eye"></i> Ver
-                                                </a>
-                                                <a href="{{ route('disciplina.edit', $disc->id) }}" 
-                                                   class="btn btn-warning btn-sm" title="Editar">
-                                                    <i class="fas fa-edit"></i> Editar
-                                                </a>
-                                                <form action="{{ route('disciplina.destroy', $disc->id) }}" 
-                                                      method="POST" class="d-inline">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" 
-                                                            class="btn btn-danger btn-sm" 
-                                                            title="Excluir"
-                                                            onclick="return confirm('Tem certeza que deseja excluir esta disciplina?')">
-                                                        <i class="fas fa-trash"></i> Excluir
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-
-
-                @else
-                    <div class="alert alert-info text-center">
-                        <h4>Nenhuma disciplina cadastrada</h4>
-                        <p>"Nova Disciplina".</p>
-                    </div>
-                @endif
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+                </td>
+                @endauth
+                <tr class="table-warning">
+                    <td>{{ $disciplina->nome }}</td>
+                    <td>{{ $disciplina->codigo }}</td>
+                    <td>{{ $disciplina->carga_horaria}}</td>
+                    @auth
+                        <td>
+                            <div class="d-flex">
+                                <div class="m-1">
+                                    <a class="btn btn-success" href="{{ route('disciplina.edit', $disciplina->id) }}">Editar</a>
+                                </div>
+                                <div class="m-1">
+                                    <a class="btn btn-primary" href="{{ route('disciplina.show', $disciplina->id) }}">Visualizar</a>
+                                </div>
+                                <div class="m-1">
+                                    <form action="{{ route('disciplina.destroy', $disciplina->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Excluir</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    @endauth
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection
