@@ -7,5 +7,5 @@
     <p>Nome: {{ $diretoria->nome }}</p>
     <p>Gestão: {{ $diretoria->gestao }}</p>
     <p>Data de início: {{ $diretoria->data_inicio }}</p>
-    <p>Data de finalização: {{ $diretoria->data_final }}</p>
+    <p>Data de finalização: {{ $diretoria->data_fim}}</p>
 @endsection
