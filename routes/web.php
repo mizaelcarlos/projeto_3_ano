@@ -14,8 +14,12 @@ use App\Http\Controllers\ZeladoriaController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
 use App\Http\Controllers\CordenadorController;
+<<<<<<< HEAD
 use App\Http\Controllers\EquipamentoController;
 
+=======
+use App\Http\Controllers\PorteiroController;
+>>>>>>> ae60da6c2f611ad4b1075b99a1240f0ae90f5f5d
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -37,7 +41,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('secretaria', SecretariaController::class);
     Route::resource('diretoria', DiretoriaController::class);
     Route::resource('cordenador', CordenadorController::class);
+<<<<<<< HEAD
     Route::resource('equipamento', EquipamentoController::class);
+=======
+    Route::resource('porteiro', PorteiroController::class);
+>>>>>>> ae60da6c2f611ad4b1075b99a1240f0ae90f5f5d
 });
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
