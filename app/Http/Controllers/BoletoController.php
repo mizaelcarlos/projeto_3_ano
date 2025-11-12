@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Boleto;
 
-class CordenadorController extends Controller
+class BoletoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       //
+        //
+        $boletos = Boleto::all();
+        return view('boleto.index', compact('boletos'));
     }
 
     /**
@@ -20,6 +23,7 @@ class CordenadorController extends Controller
     public function create()
     {
         //
+       
     }
 
     /**
@@ -28,6 +32,9 @@ class CordenadorController extends Controller
     public function store(Request $request)
     {
         //
+       Boleto::create($request->all());
+
+        return redirect()->route('boleto.index');
     }
 
     /**
@@ -35,7 +42,9 @@ class CordenadorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // //
+        // $boleto = Boleto::find($id);
+        // return view('boleto.show', compact('boleto'));
     }
 
     /**
@@ -44,6 +53,8 @@ class CordenadorController extends Controller
     public function edit(string $id)
     {
         //
+        $boleto = Boleto::find($id);
+        return view('boleto.edit', compact('boleto'));
     }
 
     /**
@@ -52,6 +63,10 @@ class CordenadorController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $boleto = Boleto::find($id);
+        $boleto->update($request->all());
+
+        return redirect()->route('boleto.index');
     }
 
     /**
@@ -60,5 +75,8 @@ class CordenadorController extends Controller
     public function destroy(string $id)
     {
         //
+        $boleto = Boleto::find($id);
+        $boleto->delete();
+        return redirect()->route('boleto.index');
     }
 }
