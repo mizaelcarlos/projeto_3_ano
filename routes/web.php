@@ -15,6 +15,7 @@ use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\SecretariaController;
 use App\Http\Controllers\CoordenadorController;
 use App\Http\Controllers\EquipamentoController;
+use App\Http\Controllers\SalaController;
 
 use App\Http\Controllers\PorteiroController;
 
@@ -41,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('coordenador', CoordenadorController::class);
     Route::resource('equipamento', EquipamentoController::class);
     Route::resource('porteiro', PorteiroController::class);
+    Route::resource('porteiro', SalaController::class);
 });
 
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
