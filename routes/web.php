@@ -10,9 +10,11 @@ use App\Http\Controllers\DiretoriaController;
 use App\Http\Controllers\ProfessorController;
 use App\Models\Professor;
 use App\Http\Controllers\AvaliacaoController;
-Use App\Http\Controllers\LaboratorioController;
+use App\Http\Controllers\LaboratorioController;
 use App\Http\Controllers\ZeladoriaController;
 
+use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\SecretariaController;
 
 Route::get('/', [HomeController::class, 'listarPublicacoes'])->name('home');
 
@@ -37,11 +39,15 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/laboratorio/{id}/edit', [LaboratorioController::class, 'edit'])
     ->name('laboratorio.edit');
+    Route::resource('disciplina', DisciplinaController::class);
+    Route::resource('secretaria', SecretariaController::class);
 });
 
 
 
+Route::resource('diretoria', DiretoriaController::class);
+Route::resource('aluno', AlunoController::class);
 Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
 
-require __DIR__ . '/auth.php';
+require __DIR__ . '/auth.php'; 
