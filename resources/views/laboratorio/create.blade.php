@@ -5,7 +5,7 @@
 <div class="container">
     <h1>Cadastrar Novo Laboratório</h1>
 
-    <form action="{{ route('laboratorios.store') }}" method="POST" class="mt-4">
+    <form action="{{ route('laboratorio.store') }}" method="POST" class="mt-4">
         @csrf
 
         <div class="mb-3">
@@ -34,7 +34,7 @@
         </div>
 
         <div class="d-flex justify-content-between">
-            <a href="{{ route('laboratorios.index') }}" class="btn btn-secondary">Voltar</a>
+            <a href="{{ route('laboratorio.index') }}" class="btn btn-secondary">Voltar</a>
             <button type="submit" class="btn btn-primary">Salvar</button>
         </div>
     </form>
