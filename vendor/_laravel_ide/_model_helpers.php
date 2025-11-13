@@ -636,6 +636,7 @@ namespace App\Models {
     /**
      * App\Models\Boleto
      *
+<<<<<<< HEAD
      * @property int $valor
      * @property string $data_vencimento
      * @property int $aluno_id
@@ -645,6 +646,9 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereAlunoId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereDataVencimento($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereValor($value)
+=======
+     * @property-read \App\Models\Aluno $alunos
+>>>>>>> 7db6a83d6a392b6700691c8b0e487997b283a89f
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto query()
@@ -5894,10 +5898,10 @@ namespace App\Models {
      * @property string|null $turno
      * @property string $tarefa
      * @property string $setor
-     * @property string $nome
+     * @property string $nome_zelador
      * @property int $id
      * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereNome($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereNomeZelador($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereSetor($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereTarefa($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Zeladoria>|Zeladoria whereTurno($value)
