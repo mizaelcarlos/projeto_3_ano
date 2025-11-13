@@ -638,11 +638,11 @@ namespace App\Models {
      *
      * @property int $valor
      * @property string $data_vencimento
-     * @property int $aluno_matricula
+     * @property int $aluno_id
      * @property int $id
      * @property-read \App\Models\Aluno $alunos
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereAlunoMatricula($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereAlunoId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereDataVencimento($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereValor($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto newModelQuery()
@@ -1258,12 +1258,6 @@ namespace App\Models {
     /**
      * App\Models\Coordenador
      *
-     * @property string $seguimento
-     * @property string $nome
-     * @property int $id
-     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador whereNome($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador whereSeguimento($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador query()
@@ -2802,8 +2796,6 @@ namespace App\Models {
     }
 
     /**
-<<<<<<< HEAD
-=======
      * App\Models\Escola
      *
      * @method static \Illuminate\Database\Eloquent\Builder<Escola>|Escola newModelQuery()
@@ -3107,7 +3099,6 @@ namespace App\Models {
     }
 
     /**
->>>>>>> 4cd84510bbe2f2afbcc9df7b093fd6306c107dae
      * App\Models\Laboratorio
      *
      * @method static \Illuminate\Database\Eloquent\Builder<Laboratorio>|Laboratorio newModelQuery()
@@ -4338,6 +4329,12 @@ namespace App\Models {
     /**
      * App\Models\Sala
      *
+     * @property int $numero_maximoAlunos
+     * @property int $numero_de_sala
+     * @property int $id
+     * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala whereNumeroDeSala($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala whereNumeroMaximoalunos($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala query()

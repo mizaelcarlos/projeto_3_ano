@@ -45,6 +45,12 @@
                             </button>
                         </form>
                     </div>
+
+                    <div class="m-1">
+                        <a href="{{ route('aluno.boleto', $aluno->id) }}">
+                            <img src="{{ asset('icons/boleto.png') }}" alt="Visualizar">
+                        </a>
+                    </div>
                 </div>
             </td>
             @endauth
