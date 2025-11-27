@@ -23,6 +23,6 @@ class Aluno extends Model
 
     public function boletos()
     {
-        return $this->hasMany(Boleto::class, 'aluno_matricula', 'matricula');
+        return $this->hasMany(Boleto::class, 'aluno_id');
     }
 }

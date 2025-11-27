@@ -636,7 +636,19 @@ namespace App\Models {
     /**
      * App\Models\Boleto
      *
+<<<<<<< HEAD
+     * @property int $valor
+     * @property string $data_vencimento
+     * @property int $aluno_id
+     * @property int $id
      * @property-read \App\Models\Aluno $alunos
+     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereAlunoId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereDataVencimento($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto whereValor($value)
+=======
+     * @property-read \App\Models\Aluno $alunos
+>>>>>>> 7db6a83d6a392b6700691c8b0e487997b283a89f
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Boleto>|Boleto query()
@@ -1250,12 +1262,6 @@ namespace App\Models {
     /**
      * App\Models\Coordenador
      *
-     * @property string $seguimento
-     * @property string $nome
-     * @property int $id
-     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador whereId($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador whereNome($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador whereSeguimento($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Coordenador>|Coordenador query()
@@ -4327,6 +4333,12 @@ namespace App\Models {
     /**
      * App\Models\Sala
      *
+     * @property int $numero_maximoAlunos
+     * @property int $numero_de_sala
+     * @property int $id
+     * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala whereId($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala whereNumeroDeSala($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala whereNumeroMaximoalunos($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Sala>|Sala query()
