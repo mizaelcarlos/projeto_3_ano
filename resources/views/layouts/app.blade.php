@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('title', 'Sistema de controle Acadêmico')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-   
+
 
     <style>
         body {
@@ -34,7 +34,7 @@
                             <a class="dropdown-item" href="{{ route('aluno.index') }}">Listar</a>
                         </div>
                     </li>
-                
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Curso</a>
                         <div class="dropdown-menu">
@@ -119,13 +119,20 @@
                             <a class="dropdown-item" href="{{ route('porteiro.index') }}">Listar</a>
                         </div>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Monitoria</a>
+                        <div class="dropdown-menu">
+                            {{-- <a class="dropdown-item" href="{{ route('monitoria.create') }}">Cadastrar</a> --}}
+                            {{-- <a class="dropdown-item" href="{{ route('monitoria.index') }}">Listar</a> --}}
+                        </div>
+                    </li>
 
-                    <li class="nav-item ml-auto d-flex align-items-center">
+                    <li class="ml-auto nav-item d-flex align-items-center">
                         <div class="d-flex align-items-center">
                             <span class="mr-2 font-weight-bold text-primary">{{ Auth::user()->name }}</span>
                             <form method="POST" action="{{ route('logout') }}" class="m-0">
                                 @csrf
-                                <button type="submit" class="nav-link btn btn-link text-danger p-0" style="font-weight: 500;">
+                                <button type="submit" class="p-0 nav-link btn btn-link text-danger" style="font-weight: 500;">
                                     Sair
                                 </button>
                             </form>

@@ -15,6 +15,7 @@ class AlunoController extends Controller
     public function index()
     {
         $alunos = Aluno::all();
+        
         $alunos_nome_inicia_gu = Aluno::where('nome', 'like', '%Gu%')->get();
         $aluno_id_maior_10 = Aluno::where('id', '>', 10)->count();
         $aluno2 = Aluno::where('id', '>', 10)
@@ -22,6 +23,15 @@ class AlunoController extends Controller
         $aluno = Aluno::whereDate('data_nascimento', '<', '2006-01-01');
         return view('aluno.index', compact('alunos', 'aluno_id_maior_10', 'aluno2'));
     }
+
+    public function boleto(string $id)
+    {    
+        $aluno = Aluno::findOrFail($id);
+        $boletos = $aluno->boletos;
+
+        return view('aluno.boleto', compact('aluno', 'boletos'));
+    }
+
 
     public function contato()
     {

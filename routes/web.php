@@ -40,21 +40,18 @@ Route::middleware('auth')->group(function () {
     Route::resource('laboratorio', LaboratorioController::class);
     Route::resource('zeladoria', ZeladoriaController::class);
     Route::resource('aluno', AlunoController::class);
+    Route::get('/aluno/{id}/boleto', [AlunoController::class, 'boleto'])->name('aluno.boleto');
 
     Route::get('/laboratorio/{id}/edit', [LaboratorioController::class, 'edit'])
     ->name('laboratorio.edit');
     Route::resource('disciplina', DisciplinaController::class);
     Route::resource('secretaria', SecretariaController::class);
     Route::resource('diretoria', DiretoriaController::class);
-<<<<<<< HEAD
-    Route::resource('monitores', MonitorController::class);
-    Route::resource('cordenador', CordenadorController::class);
-=======
     Route::resource('coordenador', CoordenadorController::class);
->>>>>>> f61f71b5a375786a23db52bef318f5a48eaf2963
     Route::resource('equipamento', EquipamentoController::class);
     Route::resource('porteiro', PorteiroController::class);
     Route::resource('sala', SalaController::class);
+    Route::resource('monitoria', MonitorController::class);
 });
 
 Route::post('cadastrar/turma', [TurmaController::class, 'cadastrar']);
