@@ -1,17 +1,26 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
+@section('content')
+<div class="container mt-4">
+    <div class="row">
 
-    <div class="py-12">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
+        @foreach ($alunos as $aluno)
+            <div class="col-3 mb-3">
+                <form action="" method="get">
+
+                    <button type="submit" class="btn rounded-3  w-100 h-100" style="color: #E6EAE1">
+                        <div class="m-3" >
+                            <div class="col">
+                                <img src="{{ asset('icons/documento.png') }}"class="img-fluid mb-2 w-25 h-25" />
+                            </div>
+                            <div>
+                                <h4 class="text-dark m-0">{{ $aluno->name }}<h4>
+                            </div class="col">
+                        </div>
+                    </button>
+                </form>
             </div>
-        </div>
-    </div>
-</x-app-layout>
+        @endforeach
+
+    </div>
+</div>
+@endsection
