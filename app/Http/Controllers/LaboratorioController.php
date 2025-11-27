@@ -61,12 +61,15 @@ class LaboratorioController extends Controller
     {
         $laboratorio = Laboratorio::find($id);
         return view('laboratorio.edit', compact('laboratorio'));
+        return view('lab$laboratorio.edit', compact('lab$laboratorio'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
+    {
+        
      {
         $laboratorio = Laboratorio::find($id);
         $laboratorio->update([
