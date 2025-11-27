@@ -1,5 +1,4 @@
 @extends('layouts.app')
-<<<<<<< HEAD
 
 @section('content')
 <div class="container">
@@ -68,7 +67,6 @@
         <a href="{{ route('laboratorio.index') }}" class="btn btn-secondary mt-4">
             Cancelar
         </a>
-=======
 @section('title', 'Cadastrar Laboratório')
 
 @section('content')
@@ -107,7 +105,6 @@
             <a href="{{ route('laboratorio.index') }}" class="btn btn-secondary">Voltar</a>
             <button type="submit" class="btn btn-primary">Salvar</button>
         </div>
->>>>>>> a5001206c17270a2426132e1a23bbd0ba6623e30
     </form>
 </div>
 @endsection
