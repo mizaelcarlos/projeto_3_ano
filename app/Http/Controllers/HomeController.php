@@ -7,7 +7,7 @@ use App\Models\Avaliacao;
 
 class HomeController extends Controller
 {
-    public function listarPublicacoes()
+    public function index()
     {
         $avaliacao = Avaliacao::find(1);
         return view('home', compact('avaliacao'));
