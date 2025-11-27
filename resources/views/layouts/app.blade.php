@@ -30,21 +30,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home') }}">Início</a>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Curso</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('curso.create') }}">Cadastrar</a>
-                            <a class="dropdown-item" href="{{ route('curso.index') }}">Listar</a>
-                        </div>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('profile') }}">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('settings') }}">Configurações</a>
-                    </li>
-
-                    <li class="ml-auto nav-item d-flex align-items-center">
                     <li class="ml-auto nav-item d-flex align-items-center">
                         <div class="d-flex align-items-center">
                             <span class="mr-2 font-weight-bold text-primary">{{ Auth::user()->name }}</span>
