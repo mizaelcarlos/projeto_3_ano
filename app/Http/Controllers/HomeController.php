@@ -9,7 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $avaliacao = Avaliacao::find(1);
-        return view('home', compact('avaliacao'));
+        return view('home');
     }
 }
