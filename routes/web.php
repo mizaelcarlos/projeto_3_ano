@@ -32,7 +32,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
     Route::resource('curso', CursoController::class);
     Route::resource('turma', TurmaController::class);
     Route::resource('diretoria', DiretoriaController::class);
@@ -40,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('laboratorio', LaboratorioController::class);
     Route::resource('zeladoria', ZeladoriaController::class);
     Route::resource('aluno', AlunoController::class);
+    Route::get('/aluno/{id}/boleto', [AlunoController::class, 'boleto'])->name('aluno.boleto');
 
     Route::get('/laboratorio/{id}/edit', [LaboratorioController::class, 'edit'])
     ->name('laboratorio.edit');
@@ -58,3 +58,5 @@ Route::post('/like', [AvaliacaoController::class, 'like'])->name('like');
 Route::get('consultar/turma/{id}', [TurmaController::class, 'consultar']);
 
 require __DIR__ . '/auth.php';
+    Route::resource('monitoria', MonitorController::class);
+}
