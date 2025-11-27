@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        return view('portfolio.create');
     }
 
     /**
@@ -27,7 +28,9 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $portfolio = User::find($id);
+        return $request;
+        // return view('portfolio.create', compact('portfolio'));
     }
 
     /**
