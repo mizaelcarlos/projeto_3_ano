@@ -5,7 +5,7 @@
     <form action="{{ route('portfolio.cadastrar') }}" method="post" enctype="multipart/form-data">
     @csrf
 
-     <!-- <input type="hidden" name="item_id" value="{{ $item->id }}"> -->
+    <input type="hidden" name="item_id" value="{{ $portfolio->id }}">
 
     <label for="">Nome: </label>
     <input type="text" name="nome" id="nome">
@@ -15,6 +15,8 @@
 
     <label for="">Portfólio: </label>
     <input type="file" name="portfolio_pdf" id="portfolio_pdf">
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
 
     </form>
 
