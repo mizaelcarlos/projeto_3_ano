@@ -2,10 +2,8 @@
 @section('title', 'Cadastro de Portifólio')
 @section('content')
     
-    <form action="{{ route('portfolio.cadastrar') }}" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
     @csrf
-
-    <input type="hidden" name="item_id" value="{{ $portfolio->id }}">
 
     <label for="">Nome: </label>
     <input type="text" name="nome" id="nome">
