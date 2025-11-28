@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/portfolio/create', [HomeController::class, 'create']);
+Route::get('/portfolio', [HomeController::class, 'create']);
 
-Route::post('/portfolio/cadastrar/{id}', [HomeController::class, 'store'])->name('portfolio.cadastrar');
+// Route::post('/portfolio/cadastrar/{id}', [HomeController::class, 'store'])->name('portfolio.cadastrar');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
