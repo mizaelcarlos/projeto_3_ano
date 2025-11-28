@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="container">
-   <h1>QR CODE</h1>
+   <h1>PIX QR CODE </h1>
+   {!!QrCode::size(200)->generate('Texto ou URL aqui')!!}
 </div>
 
 @endsection
