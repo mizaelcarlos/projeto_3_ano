@@ -4,6 +4,7 @@
 
 <div class="container">
    <h1>QRCode</h1>
+   {!!QrCode::size(200)->generate('Mônica')!!}
 </div>
 
 @endsection
