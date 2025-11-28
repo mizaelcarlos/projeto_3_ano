@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-
+    <h1>QRCODE</h1>
 </div>
 
 @endsection
