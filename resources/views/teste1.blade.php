@@ -3,7 +3,8 @@
 @section('content')
 
 <div class="container">
-<p>QRCode</p>
+<h1>QRCode</h1>
+{!!QrCode::size(200)->generate('')!!}
 </div>
 
 @endsection
