@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 
@@ -14,12 +15,19 @@ class HomeController extends Controller
         return view('home');
     }
 
+
+    public function principal()
+    {
+        $alunos = User::all();
+        return view('dashboard', compact('alunos'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('portfolio.create');
     }
 
     /**
@@ -27,7 +35,9 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $portfolio = User::find($id);
+        return $request;
+        // return view('portfolio.create', compact('portfolio'));
     }
 
     /**
