@@ -11,6 +11,7 @@ Route::get('/portfolio', [HomeController::class, 'create']);
 // Route::post('/portfolio/cadastrar/{id}', [HomeController::class, 'store'])->name('portfolio.cadastrar');
 
 Route::get('/dashboard', function () {
+Route::get('/dashboard', [HomeController::class, 'principal'],  function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

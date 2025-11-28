@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 
 use Illuminate\Http\Request;
+use app\Models\User;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,13 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+
+    public function principal()
+    {
+        $alunos = User::all();
+        return view('dashboard', compact('alunos'));
     }
 
     /**
