@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TesteQRController;
+use App\Http\Controllers\TesteQRcodeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -22,6 +22,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 });
-Route::get(uri: 'testeqrcode', action: [TesteQRController::class, 'teste1']);
+Route::get('testeqrcode', [TesteQRcodeController::class, 'teste1']);
 
 require __DIR__ . '/auth.php';
